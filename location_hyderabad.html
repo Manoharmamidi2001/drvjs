@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transgender Surgery in Bengaluru</title>
+    <title>Transgender Surgery in Hyderabad</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
     * {
@@ -16,6 +16,8 @@
         padding: 0;
         margin: 0;
         font-family: 'Nunito', sans-serif;
+        line-height: 1.6;
+        scroll-behavior: smooth;
     }
 
     /* Header styles */
@@ -23,13 +25,14 @@
         background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
         display: flex;
         justify-content: space-between;
-        padding: 1rem;
+        padding: 0.8rem 1rem;
         flex-wrap: wrap;
+        gap: 0.5rem;
     }
 
     .head-top-first {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         gap: 1.5rem;
         flex-wrap: wrap;
     }
@@ -39,11 +42,11 @@
         color: white;
         gap: 0.5rem;
         align-items: center;
+        font-size: 0.9rem;
     }
 
     .icon p {
         font-weight: bold;
-        font-size: 0.9rem;
     }
 
     .head-top-second {
@@ -55,14 +58,20 @@
     }
 
     .head-top-second img {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
+        transition: transform 0.3s;
+    }
+
+    .head-top-second img:hover {
+        transform: scale(1.2);
     }
 
     /* Hero section */
     .parent {
         position: relative;
-        height: 70vh;
+        height: 60vh;
+        min-height: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -109,23 +118,10 @@
     }
 
     .content-title {
-        font-size: 3rem;
+        font-size: clamp(1.8rem, 4vw, 3rem);
         font-weight: bold;
         margin-bottom: 0.5rem;
-    }
-
-    .btn-primary {
-        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
-        color: white;
-        border: none;
-        padding: 1rem 2rem;
-        font-size: 1rem;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        font-weight: bold;
+        color: #333;
     }
     
     .title{
@@ -133,6 +129,7 @@
         justify-content: center;
         align-items: center;
         margin: 1.5rem;
+        padding: 0 1rem;
     }
     
     .must_btn {
@@ -142,44 +139,79 @@
         padding: 1rem;
         width: 100%;
         max-width: 800px;
-        font-size: 1.4rem;
+        font-size: clamp(1rem, 2vw, 1.4rem);
         border-radius: 10px;
         gap: 0.5rem;
         cursor: pointer;
         font-weight: bold;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .must_btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .about_content{
         margin: 1.5rem;
+        padding: 0 1rem;
     }
     .about_content p{
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 1.2vw, 1.2rem);
         text-align: start;
         line-height: 1.6;
+        margin-bottom: 1rem;
     }
     
-    .image-container {
+    .main-container {
         display: flex;
-        gap: 2rem;
+        flex-direction: column;
         padding: 1.5rem;
     }
     
-    .image-container img {
-        width: 100%;
-        max-width: 600px;
-        height: auto;
-        border-radius: 10px;
+    .content-container {
+        display: flex;
+        gap: 2rem;
+        position: relative;
+    }
+    
+    .text-content {
+        flex: 1;
+        min-width: 0; /* Prevent flex item from overflowing */
+    }
+    
+    .text-content h2 {
+        font-size: clamp(1.3rem, 2vw, 1.8rem);
+        margin-bottom: 1rem;
+        color: #333;
+    }
+    
+    .text-content ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .text-content li {
+        margin-bottom: 0.8rem;
+        font-size: clamp(1rem, 1.1vw, 1.1rem);
+        line-height: 1.6;
     }
     
     .form-container {
-        flex: 1;
-        min-width: 300px;
+        width: 100%;
+        max-width: 400px;
+        position: sticky;
+        top: 120px;
+        height: fit-content;
+        align-self: flex-start;
     }
     
     .form {
         background-color: #f8f8f8;
         padding: 1.5rem;
         border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     
     .forms {
@@ -190,6 +222,7 @@
         display: block;
         margin-bottom: 0.5rem;
         font-weight: bold;
+        font-size: 0.9rem;
     }
     
     .forms input, 
@@ -199,6 +232,14 @@
         border: 1px solid #ddd;
         border-radius: 5px;
         font-family: 'Nunito', sans-serif;
+        font-size: 0.9rem;
+        transition: border-color 0.3s;
+    }
+    
+    .forms input:focus, 
+    .forms textarea:focus {
+        border-color: #d53b91;
+        outline: none;
     }
     
     .form button {
@@ -211,25 +252,32 @@
         cursor: pointer;
         margin-top: 1rem;
         width: 100%;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
     
     .list {
         margin: 2rem 1.5rem;
+        padding: 0 1rem;
     }
     
     .list h2 {
-        font-size: 1.5rem;
+        font-size: clamp(1.3rem, 2vw, 1.5rem);
         margin-bottom: 1rem;
         color: #333;
     }
     
     .list ul {
-        padding-left: 2rem;
+        padding-left: 1.5rem;
     }
     
     .list li {
         margin-bottom: 0.8rem;
-        font-size: 1.1rem;
+        font-size: clamp(1rem, 1.1vw, 1.1rem);
         line-height: 1.6;
     }
     
@@ -250,7 +298,7 @@
     }
     
     .newsletter h2 {
-        font-size: 24px;
+        font-size: clamp(1.5rem, 3vw, 2rem);
         font-weight: bold;
         margin-bottom: 8px;
     }
@@ -258,6 +306,7 @@
     .newsletter p {
         margin-bottom: 20px;
         color: #444;
+        font-size: clamp(0.9rem, 1.1vw, 1rem);
     }
     
     .subscribe-form {
@@ -268,7 +317,7 @@
     
     .subscribe-form input {
         padding: 12px 16px;
-        border: none;
+        border: 1px solid #ddd;
         border-radius: 8px;
         flex: 1;
         min-width: 200px;
@@ -283,6 +332,11 @@
         border-radius: 8px;
         cursor: pointer;
         font-weight: 600;
+        transition: background 0.3s;
+    }
+    
+    .subscribe-form button:hover {
+        background: #c12d81;
     }
     
     .footer-columns {
@@ -298,13 +352,13 @@
     }
     
     .footer-col h4 {
-        font-size: 20px;
+        font-size: clamp(1.1rem, 1.5vw, 1.3rem);
         font-weight: bold;
         margin-bottom: 16px;
     }
     
     .footer-col p {
-        font-size: 14px;
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
         line-height: 1.6;
         margin-bottom: 1rem;
     }
@@ -321,8 +375,13 @@
     
     .footer-col ul li {
         margin-bottom: 8px;
-        font-size: 14px;
+        font-size: clamp(0.8rem, 1vw, 0.9rem);
         cursor: pointer;
+        transition: color 0.3s;
+    }
+    
+    .footer-col ul li:hover {
+        color: #f8f8f8;
     }
     
     .news-item {
@@ -353,8 +412,9 @@
         position: sticky;
         background-color: white;
         top: 0;
-        z-index: 100;
+        z-index: 1000;
         left: 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     
     .container {
@@ -374,6 +434,7 @@
         font-size: 30px;
         cursor: pointer;
         display: none;
+        color: #333;
     }
     
     .nav ul {
@@ -388,6 +449,11 @@
         font-size: 16px;
         color: #000;
         font-weight: 500;
+        transition: color 0.3s;
+    }
+    
+    .nav a:hover {
+        color: #d53b91;
     }
     
     .nav .cta {
@@ -396,12 +462,60 @@
         border-radius: 6px;
         color: white;
         font-weight: 600;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .nav .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        color: white;
+    }
+    
+    /* Submenu styles */
+    .nav ul {
+        position: relative;
+    }
+    
+    .nav li {
+        position: relative;
+    }
+    
+    .nav .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 6px;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+    
+    .nav .submenu li {
+        padding: 8px 15px;
+    }
+    
+    .nav .submenu a {
+        color: #333;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+    
+    .nav .submenu a:hover {
+        color: #d53b91;
+    }
+    
+    .nav li:hover .submenu {
+        display: block;
     }
     
     /* Responsive adjustments */
     @media (max-width: 1024px) {
-        .content-title {
-            font-size: 2.5rem;
+        .content {
+            background-position: center right;
+            background-size: cover;
         }
         
         .nav ul {
@@ -409,28 +523,33 @@
         }
     }
     
+    @media (max-width: 900px) {
+        .content-container {
+            flex-direction: column;
+        }
+        
+        .form-container {
+            position: static;
+            max-width: 100%;
+            margin-top: 2rem;
+        }
+    }
+    
     @media (max-width: 768px) {
         .parent {
             height: 50vh;
+            min-height: 350px;
         }
         
         .content {
-            background-position: center right;
-            background-size: cover;
+            background-position: center;
             padding: 1rem;
-        }
-        
-        .content-title {
-            font-size: 2rem;
+            align-items: center;
+            text-align: center;
         }
         
         .must_btn {
-            font-size: 1.1rem;
             padding: 0.8rem;
-        }
-        
-        .about_content p {
-            font-size: 1rem;
         }
         
         .container {
@@ -474,9 +593,24 @@
         .footer-col img {
             max-width: 150px;
         }
+        
+        .nav .submenu {
+            position: static;
+            box-shadow: none;
+            padding-left: 20px;
+            display: none;
+        }
+        
+        .nav li:hover .submenu {
+            display: none;
+        }
+        
+        .nav li.active .submenu {
+            display: block;
+        }
     }
     
-    @media (max-width: 480px) {
+    @media (max-width: 576px) {
         .head-top {
             flex-direction: column;
             gap: 0.5rem;
@@ -488,8 +622,8 @@
             justify-content: center;
         }
         
-        .icon p {
-            font-size: 0.7rem;
+        .icon {
+            font-size: 0.8rem;
         }
         
         .head-top-second {
@@ -500,23 +634,11 @@
         
         .parent {
             height: 40vh;
-        }
-        
-        .content-title {
-            font-size: 1.5rem;
+            min-height: 300px;
         }
         
         .must_btn {
-            font-size: 1rem;
             padding: 0.6rem;
-        }
-        
-        .list h2 {
-            font-size: 1.2rem;
-        }
-        
-        .list li {
-            font-size: 1rem;
         }
         
         .container {
@@ -536,67 +658,16 @@
         }
         
         .newsletter h2 {
-            font-size: 20px;
+            font-size: 1.3rem;
         }
         
         .footer-col {
             min-width: 100%;
         }
-    }
-    .nav ul {
-        position: relative;
-    }
-    
-    .nav li {
-        position: relative;
-    }
-    
-    .nav .submenu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: white;
-        min-width: 200px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        border-radius: 6px;
-        padding: 10px 0;
-        z-index: 1000;
-    }
-    
-    .nav .submenu li {
-        padding: 8px 15px;
-    }
-    
-    .nav .submenu a {
-        color: #333;
-        font-weight: normal;
-        white-space: nowrap;
-    }
-    
-    .nav .submenu a:hover {
-        color: #d53b91;
-    }
-    
-    .nav li:hover .submenu {
-        display: block;
-    }
-    
-    /* Adjust for mobile */
-    @media (max-width: 768px) {
-        .nav .submenu {
-            position: static;
-            box-shadow: none;
-            padding-left: 20px;
-            display: none;
-        }
         
-        .nav li:hover .submenu {
-            display: none;
-        }
-        
-        .nav li.active .submenu {
-            display: block;
+        .about_content, .list, .main-container {
+            margin: 1rem;
+            padding: 0;
         }
     }
     </style>
@@ -651,9 +722,8 @@
                             <li><a href="./feminization-rhinoplasty.html">Feminization Rhinoplasty</a></li>
                             <li><a href="./dimple-creation.html">Dimple Creation</a></li>
                             <li><a href="./chin-contouring.html">Chin/Jawline Contouring</a></li>
-                            <li><a href="./adams-apple.html">Adam’s Apple Correction</a></li>
+                            <li><a href="./adams-apple.html">Adam's Apple Correction</a></li>
                             <li><a href="./hormonal.html">Hormonal Therapy</a></li>
-
                         </ul>
                     </li>
                     <li>
@@ -665,7 +735,6 @@
                             <li><a href="./ftm_phalloplasty-surgery.html">Phalloplasty Surgery</a></li>
                             <li><a href="./ftm_scrotoplasty.html">Scrotoplasty Surgery</a></li>
                             <li><a href="./ftm_hysterectomy.html">Hysterectomy Surgery</a></li>
-
                         </ul>
                     </li>
                     <li><a href="#">Results</a></li>
@@ -674,8 +743,16 @@
                         <ul class="submenu">
                             <li><a href="./location_bangalore.html">Bangalore</a></li>
                             <li><a href="./location_hyderabad.html">Hyderabad</a></li>
+                            <li><a href="./location_delhi.html">Delhi</a></li>
+                            <li><a href="./location_chennai.html">Chennai</a></li>
+                            <li><a href="./location_mysore.html">Mysore</a></li>
+                            <li><a href="./location_warangal.html">Warangal</a></li>
+                            <li><a href="./location_vijayawada.html">Vijayawada</a></li>
+                            <li><a href="./location_pune.html">Pune</a></li>
+                            <li><a href="./location_kolkata.html">Kolkata</a></li>
                         </ul>
-                    </li>                    <li><a href="#">Media</a></li>
+                    </li>
+                    <li><a href="#">Media</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="./contact.html" class="cta">Contact Us</a></li>
                 </ul>
@@ -688,58 +765,60 @@
         </div>
     </div>
     <div class="title">
-        <button class="must_btn">Change is necessary when it’s about confidence and happiness</button>
+        <button class="must_btn">Change is necessary when it's about confidence and happiness</button>
     </div>
     <div class="about_content">
-        <p>Indeed! That’s true. Feeling confident about yourself is highly essential. Just like for the trans male and female. The courage to come out, share their story, and then decide to change their appearance is a lot. However, when choosing the sex change surgery in Telangana, the individuals have a state of confusion and worry in their minds; how will everything happen? But, all this confusion goes away when you get the expertise of a trained and skilled surgeon.</p>
-        <p><span style="font-weight: bold;">VJ’s Transgender Clinic</span> in Andhra Pradesh, under the expertise of Dr. C Vijay Kumar, assists the patients in making an informed decision. We are here with you throughout the journey so that you can see the beautiful side you have been looking for. Whether female to male or male to female surgery in Telangana, our experienced team of medical experts is by your side to plan everything the way you have been thinking about.</p>
+        <p>Indeed! That's true. Feeling confident about yourself is highly essential. Just like for the trans male and female. The courage to come out, share their story, and then decide to change their appearance is a lot. However, when choosing the sex change surgery in Telangana, the individuals have a state of confusion and worry in their minds; how will everything happen? But, all this confusion goes away when you get the expertise of a trained and skilled surgeon.</p>
+        <p><span style="font-weight: bold;">VJ's Transgender Clinic</span> in Andhra Pradesh, under the expertise of Dr. C Vijay Kumar, assists the patients in making an informed decision. We are here with you throughout the journey so that you can see the beautiful side you have been looking for. Whether female to male or male to female surgery in Telangana, our experienced team of medical experts is by your side to plan everything the way you have been thinking about.</p>
     </div>
-    <div class="image-container">
-        <div>
-            <div>
-                <h1>Choose VJ’s Transgender Clinic</h1>
-                <p>Experienced surgeon Dr. C Vijay Kumar, having expertise of +40 years and counting, is one of the most significant factors for patients not just from India but from around the globe coming to our clinic. His expertise and understanding of the latest technology bring the utmost difference in the results.</p>
+    <div class="main-container">
+        <div class="content-container">
+            <div class="text-content">
+                <div>
+                    <h2>Choose VJ's Transgender Clinic</h2>
+                    <p>Experienced surgeon <span style="font-weight: bold;">Dr. C Vijay Kumar</span>, <br> having expertise of +40 years and counting, is one of the most significant factors for patients not just from India but from around the globe coming to our clinic. His expertise and understanding of the latest technology bring the utmost difference in the results.</p>
+                </div>
+                <div style="margin-top:1rem ;">
+                    <h2>This surgery could be a vital transition for your life, which is why there are some things that you need to be aware of before the procedure:-</h2>
+                    <ul>
+                        <li>Like every other surgery, there are some potential risks and complications that you could experience after the top surgery. So, it will be beneficial for you to carefully consider if you want to go through this surgery or not.</li>
+                        <li>If you have a habit of smoking and you are unable to quit that habit, then you should reconsider the decision of undergoing this surgery because smoking severely affects this procedure and you should quit smoking for at least two months before the surgery.</li>
+                        <li>There are some medications that you should stop taking, like ibuprofen and aspirin, because if you have consumed these medicines before the surgery. Then, a high risk of bleeding develops during or after the procedure.</li>
+                        <li>You have to maintain good physical health, which will help you in a quick recovery from the chest masculinisation surgery. By eating a healthy diet, exercising you can enhance your physical health.</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <h2>You need to keep in mind that this procedure is complex and has a longer recovery period. This is why you need to make recovery preparations before the Top surgery:-</h2>
+                    <ul>
+                        <li>Taking a break from work is essential, as it will help you get properly healed. You should get a break for at least 2 to 4 weeks after the surgery.</li>
+                        <li>You should hire a driver or a person that you can rely on so that they can drive you to the medical facilities for follow-up appointments and checkups during the recovery phase.</li>
+                        <li>Any family member, friend or professional caregiver should be present so that you can get the much-needed assistance in completing the daily activities like bathing, brushing or even dressing.</li>
+                        <li>You should have ample stock of supplies like medicines, bandages, gauze and loose clothes. The loose clothing will keep you comfortable during the recovery period.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="form">
+                    <div class="forms">
+                        <label>Name:</label>
+                        <input type="text" placeholder="Your name">
+                    </div>
+                    <div class="forms">
+                        <label>Phone:</label>
+                        <input type="text" placeholder="Your phone number">
+                    </div>
+                    <div class="forms">
+                        <label>Email:</label>
+                        <input type="email" placeholder="Your email address">
+                    </div>
+                    <div class="forms">
+                        <label>Message:</label>
+                        <textarea rows="4" placeholder="Your message"></textarea>
+                    </div>
+                    <button>Send message</button>
+                </div>
             </div>
         </div>
-        <div class="form-container">
-            <div class="form">
-                <div class="forms">
-                    <label>Name:</label>
-                    <input type="text">
-                </div>
-                <div class="forms">
-                    <label>Phone:</label>
-                    <input type="text">
-                </div>
-                <div class="forms">
-                    <label>Email:</label>
-                    <input type="email">
-                </div>
-                <div class="forms">
-                    <label>Message:</label>
-                    <textarea rows="4"></textarea>
-                </div>
-                <button>Send message</button>
-            </div>
-        </div>
-    </div>
-    <div class="list">
-        <h2>This surgery could be a vital transition for your life, which is why there are some things that you need to be aware of before the procedure:-</h2>
-        <ul>
-            <li>Like every other surgery, there are some potential risks and complications that you could experience after the top surgery. So, it will be beneficial for you to carefully consider if you want to go through this surgery or not.</li>
-            <li>If you have a habit of smoking and you are unable to quit that habit, then you should reconsider the decision of undergoing this surgery because smoking severely affects this procedure and you should quit smoking for at least two months before the surgery.</li>
-            <li>There are some medications that you should stop taking, like ibuprofen and aspirin, because if you have consumed these medicines before the surgery. Then, a high risk of bleeding develops during or after the procedure.</li>
-            <li>You have to maintain good physical health, which will help you in a quick recovery from the chest masculinisation surgery. By eating a healthy diet, exercising you can enhance your physical health.</li>
-        </ul>
-    </div>
-    <div class="list">
-        <h2>You need to keep in mind that this procedure is complex and has a longer recovery period. This is why you need to make recovery preparations before the Top surgery:-</h2>
-        <ul>
-            <li>Taking a break from work is essential, as it will help you get properly healed. You should get a break for at least 2 to 4 weeks after the surgery.</li>
-            <li>You should hire a driver or a person that you can rely on so that they can drive you to the medical facilities for follow-up appointments and checkups during the recovery phase.</li>
-            <li>Any family member, friend or professional caregiver should be present so that you can get the much-needed assistance in completing the daily activities like bathing, brushing or even dressing.</li>
-            <li>You should have ample stock of supplies like medicines, bandages, gauze and loose clothes. The loose clothing will keep you comfortable during the recovery period.</li>
-        </ul>
     </div>
     <div class="list">
         <h2>After the Top surgery in Bengaluru, these are some recommendations for you if you want a quick and healthy recovery:-</h2>
@@ -798,19 +877,23 @@
             </div>
             
             <div class="footer-col">
-                <h4>Latest News</h4>
+                <h4>Latest News & Updates</h4>
                 <div class="news-item">
-                    <img src="./assets/news.svg" alt="News thumbnail">
                     <div>
-                        <p>Top 5 Tips On How To Choose A Good Dentist</p>
-                        <small>📅 01-22-2023</small>
+                        <p>New Advancements in Gender Affirming Surgeries</p>
+                        <small>📅 May 15, 2023</small>
                     </div>
                 </div>
                 <div class="news-item">
-                    <img src="./assets/news.svg" alt="News thumbnail">
                     <div>
-                        <p>Top 5 Tips On How To Choose A Good Dentist</p>
-                        <small>📅 01-22-2023</small>
+                        <p>Understanding Your Rights: Trans Healthcare in India</p>
+                        <small>📅 April 28, 2023</small>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div>
+                        <p>Essential Recovery Tips After Gender Confirmation Surgery</p>
+                        <small>📅 March 10, 2023</small>
                     </div>
                 </div>
             </div>
@@ -821,9 +904,14 @@
         </div>
     </footer>
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
             const nav = document.getElementById('nav');
-            nav.classList.toggle('active');
+            
+            // Toggle mobile menu
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
             
             // For mobile - toggle submenus when clicking parent items
             if (window.innerWidth <= 768) {
@@ -839,6 +927,23 @@
                     }
                 });
             }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
