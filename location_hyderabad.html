@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transgender Surgery in Bengaluru</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        padding: 0;
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    /* Header styles */
+    .head-top {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .head-top-first {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        display: flex;
+        color: white;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .icon p {
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .head-top-second {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .head-top-second img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Hero section */
+    .parent {
+        position: relative;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        padding-bottom: 1.5rem;
+    }
+
+    .parent::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            to right,
+            #E40303 0%,
+            #FF8C00 20%,
+            #FFED00 40%,
+            #008026 60%,
+            #006792 80%,
+            #750787 100%
+        );
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-image: url('./assets/carouscel.svg');
+        background-position: center right 1.5rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .content-title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-primary {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    
+    .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1.5rem;
+    }
+    
+    .must_btn {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        color: white;
+        border: none;
+        padding: 1rem;
+        width: 100%;
+        max-width: 800px;
+        font-size: 1.4rem;
+        border-radius: 10px;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .about_content{
+        margin: 1.5rem;
+    }
+    .about_content p{
+        font-size: 1.2rem;
+        text-align: start;
+        line-height: 1.6;
+    }
+    
+    .image-container {
+        display: flex;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .image-container img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .form-container {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .form {
+        background-color: #f8f8f8;
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+    
+    .forms {
+        margin-bottom: 1rem;
+    }
+    
+    .forms label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    
+    .forms input, 
+    .forms textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .form button {
+        background: linear-gradient(to right, #f26c91, #ec76cb);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .list {
+        margin: 2rem 1.5rem;
+    }
+    
+    .list h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+    
+    .list ul {
+        padding-left: 2rem;
+    }
+    
+    .list li {
+        margin-bottom: 0.8rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    /* Footer styles */
+    .footer {
+        background: linear-gradient(135deg, #e174b6, #fe747b);
+        color: #fff;
+        padding: 60px 24px 20px;
+    }
+    
+    .newsletter {
+        background: #fff;
+        border-radius: 20px;
+        color: #000;
+        padding: 30px;
+        max-width: 1000px;
+        margin: 0 auto 50px;
+    }
+    
+    .newsletter h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    
+    .newsletter p {
+        margin-bottom: 20px;
+        color: #444;
+    }
+    
+    .subscribe-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .subscribe-form input {
+        padding: 12px 16px;
+        border: none;
+        border-radius: 8px;
+        flex: 1;
+        min-width: 200px;
+        font-size: 14px;
+    }
+    
+    .subscribe-form button {
+        padding: 12px 24px;
+        background: #d53b91;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    
+    .footer-columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 30px;
+    }
+    
+    .footer-col {
+        flex: 1;
+        min-width: 250px;
+    }
+    
+    .footer-col h4 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+    
+    .footer-col p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-col img {
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-col ul {
+        list-style: none;
+    }
+    
+    .footer-col ul li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    
+    .news-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+    
+    .news-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 20px;
+        font-size: 13px;
+        margin-top: 30px;
+    }
+    
+    /* Navigation */
+    .header {
+        width: 100%;
+        position: sticky;
+        background-color: white;
+        top: 0;
+        z-index: 100;
+        left: 0;
+    }
+    
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1rem 1.5rem;
+    }
+    
+    .logo {
+        height: 35px;
+    }
+    
+    .menu-toggle {
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+    }
+    
+    .nav ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        flex-wrap: wrap;
+    }
+    
+    .nav a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #000;
+        font-weight: 500;
+    }
+    
+    .nav .cta {
+        background: linear-gradient(to right, #f26c91, #ec76cb);
+        padding: 8px 16px;
+        border-radius: 6px;
+        color: white;
+        font-weight: 600;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+        .content-title {
+            font-size: 2.5rem;
+        }
+        
+        .nav ul {
+            gap: 15px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .parent {
+            height: 50vh;
+        }
+        
+        .content {
+            background-position: center right;
+            background-size: cover;
+            padding: 1rem;
+        }
+        
+        .content-title {
+            font-size: 2rem;
+        }
+        
+        .must_btn {
+            font-size: 1.1rem;
+            padding: 0.8rem;
+        }
+        
+        .about_content p {
+            font-size: 1rem;
+        }
+        
+        .container {
+            padding: 0.8rem;
+        }
+        
+        .logo {
+            height: 30px;
+        }
+        
+        .menu-toggle {
+            display: block;
+        }
+        
+        .nav {
+            display: none;
+            width: 100%;
+        }
+        
+        .nav.active {
+            display: block;
+        }
+        
+        .nav ul {
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1rem 0;
+        }
+        
+        .nav a {
+            display: block;
+            padding: 0.5rem 1rem;
+        }
+        
+        .nav .cta {
+            display: inline-block;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        
+        .footer-col img {
+            max-width: 150px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .head-top {
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+        
+        .head-top-first {
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        
+        .icon p {
+            font-size: 0.7rem;
+        }
+        
+        .head-top-second {
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .parent {
+            height: 40vh;
+        }
+        
+        .content-title {
+            font-size: 1.5rem;
+        }
+        
+        .must_btn {
+            font-size: 1rem;
+            padding: 0.6rem;
+        }
+        
+        .list h2 {
+            font-size: 1.2rem;
+        }
+        
+        .list li {
+            font-size: 1rem;
+        }
+        
+        .container {
+            padding: 0.5rem;
+        }
+        
+        .logo {
+            height: 25px;
+        }
+        
+        .menu-toggle {
+            font-size: 24px;
+        }
+        
+        .newsletter {
+            padding: 20px;
+        }
+        
+        .newsletter h2 {
+            font-size: 20px;
+        }
+        
+        .footer-col {
+            min-width: 100%;
+        }
+    }
+    .nav ul {
+        position: relative;
+    }
+    
+    .nav li {
+        position: relative;
+    }
+    
+    .nav .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 6px;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+    
+    .nav .submenu li {
+        padding: 8px 15px;
+    }
+    
+    .nav .submenu a {
+        color: #333;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+    
+    .nav .submenu a:hover {
+        color: #d53b91;
+    }
+    
+    .nav li:hover .submenu {
+        display: block;
+    }
+    
+    /* Adjust for mobile */
+    @media (max-width: 768px) {
+        .nav .submenu {
+            position: static;
+            box-shadow: none;
+            padding-left: 20px;
+            display: none;
+        }
+        
+        .nav li:hover .submenu {
+            display: none;
+        }
+        
+        .nav li.active .submenu {
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="head-top">
+        <div class="head-top-first">
+            <div class="icon">
+                <img src="./assets/call.svg" alt="call">
+                <p>+91 123456789</p>
+            </div>
+            <div class="icon">
+                <img src="./assets/location.svg" alt="location">
+                <p>VJ'S Transgender Clinic, Visakhapatnam.</p>
+            </div>
+            <div class="icon">
+                <img src="./assets/mail.svg" alt="mail">
+                <p>drvjs@gmail.com</p>
+            </div>
+        </div>
+        <div class="head-top-second">
+            <img src="./assets/pinterest.svg" alt="pinter">
+            <img src="./assets/facebook.svg" alt="pinter">
+            <img src="./assets/instagram.svg" alt="pinter">
+            <img src="./assets/linkedin.svg" alt="pinter">
+            <img src="./assets/twitter.svg" alt="pinter">
+            <img src="./assets/youtube.svg" alt="pinter">
+        </div>
+    </div>
+    <div class="header">
+        <div class="container">
+            <img src="./assets/headerlogo.png" alt="Logo" class="logo" />
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li>
+                        <a href="./about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="./srs.html">SRS/GCS</a>
+                    </li>
+                    <li>
+                        <a href="#">Breast Augmentation</a>
+                    </li>
+                    <li>
+                        <a href="./index.html">MTF Surgeries</a>
+                        <ul class="submenu">
+                            <li><a href="./index.html">Male To Female</a></li>
+                            <li><a href="./facial.html">Facial Feminization</a></li>
+                            <li><a href="./forehead-reconstruction.html">Forehead Reconstruction</a></li>
+                            <li><a href="./frontal-hairline.html">Fortanal Hairline</a></li>
+                            <li><a href="./feminization-rhinoplasty.html">Feminization Rhinoplasty</a></li>
+                            <li><a href="./dimple-creation.html">Dimple Creation</a></li>
+                            <li><a href="./chin-contouring.html">Chin/Jawline Contouring</a></li>
+                            <li><a href="./adams-apple.html">Adam’s Apple Correction</a></li>
+                            <li><a href="./hormonal.html">Hormonal Therapy</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./ftm.html">FTM Surgeries</a>
+                        <ul class="submenu">
+                            <li><a href="./ftm.html">FTM Surgery</a></li>
+                            <li><a href="./ftm_top.html">Top Surgery</a></li>
+                            <li><a href="./ftm_genital-reconstruction.html">Genital Reconstruction</a></li>
+                            <li><a href="./ftm_phalloplasty-surgery.html">Phalloplasty Surgery</a></li>
+                            <li><a href="./ftm_scrotoplasty.html">Scrotoplasty Surgery</a></li>
+                            <li><a href="./ftm_hysterectomy.html">Hysterectomy Surgery</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Results</a></li>
+                    <li>
+                        <a href="#">Location</a>
+                        <ul class="submenu">
+                            <li><a href="./location_bangalore.html">Bangalore</a></li>
+                            <li><a href="./location_hyderabad.html">Hyderabad</a></li>
+                        </ul>
+                    </li>                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="./contact.html" class="cta">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="parent">
+        <div class="content">
+            <p class="content-title">Transgender Surgery in Hyderabad</p>
+        </div>
+    </div>
+    <div class="title">
+        <button class="must_btn">Change is necessary when it’s about confidence and happiness</button>
+    </div>
+    <div class="about_content">
+        <p>Indeed! That’s true. Feeling confident about yourself is highly essential. Just like for the trans male and female. The courage to come out, share their story, and then decide to change their appearance is a lot. However, when choosing the sex change surgery in Telangana, the individuals have a state of confusion and worry in their minds; how will everything happen? But, all this confusion goes away when you get the expertise of a trained and skilled surgeon.</p>
+        <p><span style="font-weight: bold;">VJ’s Transgender Clinic</span> in Andhra Pradesh, under the expertise of Dr. C Vijay Kumar, assists the patients in making an informed decision. We are here with you throughout the journey so that you can see the beautiful side you have been looking for. Whether female to male or male to female surgery in Telangana, our experienced team of medical experts is by your side to plan everything the way you have been thinking about.</p>
+    </div>
+    <div class="image-container">
+        <div>
+            <div>
+                <h1>Choose VJ’s Transgender Clinic</h1>
+                <p>Experienced surgeon Dr. C Vijay Kumar, having expertise of +40 years and counting, is one of the most significant factors for patients not just from India but from around the globe coming to our clinic. His expertise and understanding of the latest technology bring the utmost difference in the results.</p>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="form">
+                <div class="forms">
+                    <label>Name:</label>
+                    <input type="text">
+                </div>
+                <div class="forms">
+                    <label>Phone:</label>
+                    <input type="text">
+                </div>
+                <div class="forms">
+                    <label>Email:</label>
+                    <input type="email">
+                </div>
+                <div class="forms">
+                    <label>Message:</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <button>Send message</button>
+            </div>
+        </div>
+    </div>
+    <div class="list">
+        <h2>This surgery could be a vital transition for your life, which is why there are some things that you need to be aware of before the procedure:-</h2>
+        <ul>
+            <li>Like every other surgery, there are some potential risks and complications that you could experience after the top surgery. So, it will be beneficial for you to carefully consider if you want to go through this surgery or not.</li>
+            <li>If you have a habit of smoking and you are unable to quit that habit, then you should reconsider the decision of undergoing this surgery because smoking severely affects this procedure and you should quit smoking for at least two months before the surgery.</li>
+            <li>There are some medications that you should stop taking, like ibuprofen and aspirin, because if you have consumed these medicines before the surgery. Then, a high risk of bleeding develops during or after the procedure.</li>
+            <li>You have to maintain good physical health, which will help you in a quick recovery from the chest masculinisation surgery. By eating a healthy diet, exercising you can enhance your physical health.</li>
+        </ul>
+    </div>
+    <div class="list">
+        <h2>You need to keep in mind that this procedure is complex and has a longer recovery period. This is why you need to make recovery preparations before the Top surgery:-</h2>
+        <ul>
+            <li>Taking a break from work is essential, as it will help you get properly healed. You should get a break for at least 2 to 4 weeks after the surgery.</li>
+            <li>You should hire a driver or a person that you can rely on so that they can drive you to the medical facilities for follow-up appointments and checkups during the recovery phase.</li>
+            <li>Any family member, friend or professional caregiver should be present so that you can get the much-needed assistance in completing the daily activities like bathing, brushing or even dressing.</li>
+            <li>You should have ample stock of supplies like medicines, bandages, gauze and loose clothes. The loose clothing will keep you comfortable during the recovery period.</li>
+        </ul>
+    </div>
+    <div class="list">
+        <h2>After the Top surgery in Bengaluru, these are some recommendations for you if you want a quick and healthy recovery:-</h2>
+        <ul>
+            <li>If you have undergone Top surgery, then you should avoid taking a shower for some time. The alternate way of maintaining healthy hygiene is by using sponge baths or wipes.</li>
+            <li>It is important to avoid any exercise that requires lifting heavy stuff. If you are beginning to feel better, then you could add some light-intensity exercises to your schedule.</li>
+            <li>Experiencing pain and discomfort is normal, and to counter these effects, you should follow the prescribed medication or apply ice packs to the area of pain.</li>
+            <li>You have to keep your body hydrated by drinking plenty of water because it can reduce the risk of constipation, which is another side effect of eating the medications for pain.</li>
+            <li>If you want to boost your healing process and decrease the redness and scar tissues on your body, then we will advise you to undergo over-the-counter scar treatments.</li>
+        </ul>
+    </div>
+    <footer class="footer">
+        <div class="newsletter">
+            <div>
+                <h2>Learn about our discounts</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+            </div>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Email address." />
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        
+        <div class="footer-columns">
+            <div class="footer-col">
+                <img src="./assets/footerlogo.png" alt="VJ's Clinic Logo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                <div class="social-icons">
+                    <a href="#"><img src="./assets/facebook.svg" alt="Facebook"></a>
+                    <a href="#"><img src="./assets/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="./assets/twitter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="./assets/youtube.svg" alt="YouTube"></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Site Navigation</h4>
+                <div style="display: flex; gap: 2rem;">
+                    <ul>
+                        <li>Consultation</li>
+                        <li>Teeth Whitening</li>
+                        <li>Root Canals</li>
+                        <li>Crowns & Bridges</li>
+                        <li>Dental Implants</li>
+                        <li>Tooth Extractions</li>
+                    </ul>
+                    <ul>
+                        <li>Homepage</li>
+                        <li>Our Services</li>
+                        <li>Portfolio-Works</li>
+                        <li>Latest News</li>
+                        <li>Our Contacts</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Latest News</h4>
+                <div class="news-item">
+                    <img src="./assets/news.svg" alt="News thumbnail">
+                    <div>
+                        <p>Top 5 Tips On How To Choose A Good Dentist</p>
+                        <small>📅 01-22-2023</small>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="./assets/news.svg" alt="News thumbnail">
+                    <div>
+                        <p>Top 5 Tips On How To Choose A Good Dentist</p>
+                        <small>📅 01-22-2023</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2021 All rights reserved, Developed at Synsper Technologies</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+            
+            // For mobile - toggle submenus when clicking parent items
+            if (window.innerWidth <= 768) {
+                const navItems = document.querySelectorAll('.nav li');
+                navItems.forEach(item => {
+                    if (item.querySelector('.submenu')) {
+                        item.addEventListener('click', function(e) {
+                            if (e.target === this.querySelector('a')) {
+                                e.preventDefault();
+                                this.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

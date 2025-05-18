@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - VJ's Transgender Clinic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        padding: 0;
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        overflow-x: hidden;
+    }
+
+    /* Header styles */
+    .head-top {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .head-top-first {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .icon p {
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .head-top-second {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .head-top-second img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Hero section */
+    .parent {
+        position: relative;
+        height: 40vh;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .parent::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            to right,
+            #E40303 0%,
+            #FF8C00 20%,
+            #FFED00 40%,
+            #008026 60%,
+            #006792 80%,
+            #750787 100%
+        );
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .content-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 1.5rem 1rem;
+    }
+    
+    .title h1 {
+        font-size: 2rem;
+        color: #d53b91;
+    }
+
+    /* Contact Cards */
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+        max-width: 1200px;
+    }
+
+    .card {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 350px;
+        padding: 1.5rem;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .card h2 {
+        color: #d53b91;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card p {
+        color: #555;
+        line-height: 1.5;
+    }
+
+    /* Contact Form */
+    .form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin: 0 auto 3rem;
+        padding: 2rem;
+        max-width: 1000px;
+    }
+
+    .form > div {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .forms {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+
+    .forms label {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #555;
+    }
+
+    .form input, 
+    .form textarea {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .form input:focus, 
+    .form textarea:focus {
+        background-color: #e7e3e6;
+        outline: none;
+    }
+
+    .form button {
+        border: none;
+        background: linear-gradient(to right, #f26c91, #ec76cb);
+        color: white;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    .form button:hover {
+        transform: translateY(-3px);
+    }
+
+    /* Navigation */
+    .header {
+        width: 100%;
+        position: sticky;
+        background-color: white;
+        top: 0;
+        z-index: 100;
+        left: 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        height: 40px;
+        width: auto;
+    }
+
+    .menu-toggle {
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+        color: #d53b91;
+    }
+
+    /* NAVIGATION */
+    .nav ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #333;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    
+    .nav a:hover {
+        color: #d53b91;
+    }
+    
+    .nav .cta {
+        background: linear-gradient(to right, #f26c91, #ec76cb);
+        padding: 8px 16px;
+        border-radius: 6px;
+        color: white;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .nav .cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(242, 108, 145, 0.4);
+        color: white;
+    }
+    
+    /* Submenu styles */
+    .nav .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 6px;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+    
+    .nav .submenu li {
+        padding: 8px 15px;
+    }
+    
+    .nav .submenu a {
+        color: #333;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+    
+    .nav .submenu a:hover {
+        color: #d53b91;
+    }
+    
+    .nav li {
+        position: relative;
+    }
+    
+    .nav li:hover .submenu {
+        display: block;
+    }
+    
+    /* Footer */
+    .footer {
+        background: linear-gradient(135deg, #e174b6, #fe747b);
+        color: #fff;
+        padding: 60px 24px 20px;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .newsletter {
+        background: #fff;
+        border-radius: 20px;
+        color: #000;
+        padding: 30px;
+        max-width: 1000px;
+        margin: 0 auto 50px;
+        display: flex;  
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .newsletter h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    .newsletter p {
+        margin-bottom: 20px;
+        color: #444;
+        text-align: center;
+    }
+
+    .subscribe-form {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .subscribe-form input {
+        padding: 12px 16px;
+        border: none;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 400px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+    }
+
+    .subscribe-form button {
+        padding: 12px 24px;
+        background: #d53b91;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.3s ease;
+    }
+    
+    .subscribe-form button:hover {
+        background: #b8327d;
+    }
+
+    .footer-columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .footer-col {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-col h3, .footer-col h4 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    .footer-col p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    .footer-col img {
+        height: auto;
+        width: 200px;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-col ul li:hover {
+        color: #ffd6e7;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .social-icons a {
+        color: white;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+        transform: translateY(-3px);
+        color: #ffd6e7;
+    }
+
+    .news-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .news-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    .news-item p {
+        margin: 0;
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .news-item small {
+        font-size: 12px;
+        color: #eee;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 20px;
+        font-size: 13px;
+        margin-top: 30px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+        .content-title {
+            font-size: 2.2rem;
+        }
+        
+        .nav ul {
+            gap: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+        
+        .nav {
+            display: none;
+            width: 100%;
+        }
+        
+        .nav.active {
+            display: block;
+        }
+        
+        .nav ul {
+            flex-direction: column;
+            gap: 0;
+            padding: 1rem 0;
+        }
+        
+        .nav li {
+            width: 100%;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+        
+        .nav a {
+            display: block;
+            padding: 0.5rem 1rem;
+        }
+        
+        .nav .cta {
+            margin: 1rem auto;
+            display: inline-block;
+        }
+        
+        /* Adjust submenu for mobile */
+        .nav .submenu {
+            position: static;
+            box-shadow: none;
+            padding-left: 20px;
+            display: none;
+            background: transparent;
+        }
+        
+        .nav li:hover .submenu {
+            display: none;
+        }
+        
+        .nav li.active .submenu {
+            display: block;
+        }
+        
+        .parent {
+            height: 30vh;
+        }
+        
+        .content-title {
+            font-size: 1.8rem;
+        }
+        
+        .form {
+            padding: 1rem;
+        }
+        
+        .form input, 
+        .form textarea {
+            font-size: 0.9rem;
+        }
+        
+        .newsletter {
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .head-top {
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .head-top-first {
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .head-top-second {
+            justify-content: center;
+        }
+        
+        .icon p {
+            font-size: 0.8rem;
+        }
+        
+        .head-top-second img {
+            width: 15px;
+            height: 15px;
+        }
+        
+        .parent {
+            height: 25vh;
+        }
+        
+        .content-title {
+            font-size: 1.5rem;
+        }
+        
+        .title h1 {
+            font-size: 1.5rem;
+        }
+        
+        .card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .card img {
+            margin-bottom: 1rem;
+        }
+        
+        .form {
+            padding: 1rem;
+        }
+        
+        .footer {
+            padding: 30px 15px;
+        }
+        
+        .news-item {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .news-item img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .content-title {
+            font-size: 1.3rem;
+        }
+        
+        .card {
+            padding: 1rem;
+        }
+        
+        .form input, 
+        .form textarea {
+            padding: 0.8rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="head-top">
+        <div class="head-top-first">
+            <div class="icon">
+                <img src="./assets/call.svg" alt="call">
+                <p>+91 123456789</p>
+            </div>
+            <div class="icon">
+                <img src="./assets/location.svg" alt="location">
+                <p>VJ'S Transgender Clinic, Visakhapatnam.</p>
+            </div>
+            <div class="icon">
+                <img src="./assets/mail.svg" alt="mail">
+                <p>drvjs@gmail.com</p>
+            </div>
+        </div>
+        <div class="head-top-second">
+            <img src="./assets/pinterest.svg" alt="pinter">
+            <img src="./assets/facebook.svg" alt="pinter">
+            <img src="./assets/instagram.svg" alt="pinter">
+            <img src="./assets/linkedin.svg" alt="pinter">
+            <img src="./assets/twitter.svg" alt="pinter">
+            <img src="./assets/youtube.svg" alt="pinter">
+        </div>
+    </div>
+    <div class="header">
+        <div class="container">
+            <img src="./assets/headerlogo.png" alt="Logo" class="logo" />
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li>
+                        <a href="./about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="./srs.html">SRS/GCS</a>
+                    </li>
+                    <li>
+                        <a href="#">Breast Augmentation</a>
+                    </li>
+                    <li>
+                        <a href="./index.html">MTF Surgeries</a>
+                        <ul class="submenu">
+                            <li><a href="./index.html">Male To Female</a></li>
+                            <li><a href="./facial.html">Facial Feminization</a></li>
+                            <li><a href="./forehead-reconstruction.html">Forehead Reconstruction</a></li>
+                            <li><a href="./frontal-hairline.html">Fortanal Hairline</a></li>
+                            <li><a href="./feminization-rhinoplasty.html">Feminization Rhinoplasty</a></li>
+                            <li><a href="./dimple-creation.html">Dimple Creation</a></li>
+                            <li><a href="./chin-contouring.html">Chin/Jawline Contouring</a></li>
+                            <li><a href="./adams-apple.html">Adam's Apple Correction</a></li>
+                            <li><a href="./hormonal.html">Hormonal Therapy</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./ftm.html">FTM Surgeries</a>
+                        <ul class="submenu">
+                            <li><a href="./ftm.html">FTM Surgery</a></li>
+                            <li><a href="./ftm_top.html">Top Surgery</a></li>
+                            <li><a href="./ftm_genital-reconstruction.html">Genital Reconstruction</a></li>
+                            <li><a href="./ftm_phalloplasty-surgery.html">Phalloplasty Surgery</a></li>
+                            <li><a href="./ftm_scrotoplasty.html">Scrotoplasty Surgery</a></li>
+                            <li><a href="./ftm_hysterectomy.html">Hysterectomy Surgery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Results</a></li>
+                    <li>
+                        <a href="#">Location</a>
+                        <ul class="submenu">
+                            <li><a href="./location_bangalore.html">Bangalore</a></li>
+                            <li><a href="./location_hyderabad.html">Hyderabad</a></li>
+                        </ul>
+                    </li>                    
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="./contact.html" class="cta">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="parent">
+        <div class="content">
+            <p class="content-title">CONTACT US</p>
+        </div>
+    </div>
+    <div class="title">
+        <h1>Contact Us</h1>
+    </div>
+    <div class="cards">
+        <div class="card">
+            <img src="./assets/pin.png" alt="Address icon">
+            <div>
+                <h2>Address</h2>
+                <p>4th Floor, KGH Down Rd, Besides Lepakshi Handicrafts, Jagadamba Junction, Visakhapatnam, Andhra Pradesh 530002</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/phone.png" alt="Phone icon">
+            <div>
+                <h2>Phone</h2>
+                <p>9849797776</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assets/mail.png" alt="Email icon">
+            <div>
+                <h2>Email</h2>
+                <p>chevuru.vijay@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <div>
+            <div class="forms">
+                <label>Name:</label>
+                <input type="text" placeholder="Your name">
+            </div>
+            <div class="forms">
+                <label>Phone:</label>
+                <input type="text" placeholder="Your phone number">
+            </div>
+            <div class="forms">
+                <label>Email:</label>
+                <input type="email" placeholder="Your email address">
+            </div>
+        </div>
+        <div class="forms">
+            <label>Message:</label>
+            <textarea placeholder="Your message" rows="5"></textarea>
+            <button type="submit">Send message</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <!-- Newsletter Bar -->
+        <div class="newsletter">
+            <div>
+                <h2>Learn about our discounts</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+            </div>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Email address">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Footer Main Content -->
+        <div class="footer-columns">
+            <!-- Column 1 -->
+            <div class="footer-col">
+                <img src="./assets/footerlogo.png" alt="VJ's Transgender Clinic Logo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h4>Site Navigation</h4>
+                <div style="display: flex; gap:1rem; flex-wrap: wrap;">
+                    <ul>
+                        <li>Consultation</li>
+                        <li>Teeth Whitening</li>
+                        <li>Root Canals</li>
+                        <li>Crowns & Bridges</li>
+                        <li>Dental Implants</li>
+                        <li>Tooth Extractions</li>
+                    </ul>
+                    <ul>
+                        <li>Homepage</li>
+                        <li>Our Services</li>
+                        <li>Portfolio-Works</li>
+                        <li>Latest News</li>
+                        <li>Our Contacts</li>
+                        <li>Privacy Policy</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h4>Latest News</h4>
+                <div class="news-item">
+                    <img src="./assets/news.svg" style="width: 100px;" alt="News thumbnail">
+                    <div>
+                        <p>Top 5 Tips On How To Choose A Good Dentist</p>
+                        <small>📅 01-22-2023</small>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="./assets/news.svg" style="width: 100px;" alt="News thumbnail">
+                    <div>
+                        <p>Top 5 Tips On How To Choose A Good Dentist</p>
+                        <small>📅 01-22-2023</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© 2021 All rights reserved, Developed at Synsper Technologies</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+            
+            // For mobile - toggle submenus when clicking parent items
+            if (window.innerWidth <= 768) {
+                const navItems = document.querySelectorAll('.nav li');
+                navItems.forEach(item => {
+                    if (item.querySelector('.submenu')) {
+                        item.addEventListener('click', function(e) {
+                            if (e.target === this.querySelector('a')) {
+                                e.preventDefault();
+                                this.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

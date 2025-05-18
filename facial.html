@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body, html {
+        padding: 0;
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    /* Header styles */
+    .head-top {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .head-top-first {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .icon p {
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .head-top-second {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .head-top-second img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Hero section */
+    .parent {
+        position: relative;
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow: hidden;
+        padding-bottom: 1.5rem;
+    }
+
+    .parent::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+            to right,
+            #E40303 0%,
+            #FF8C00 20%,
+            #FFED00 40%,
+            #008026 60%,
+            #006792 80%,
+            #750787 100%
+        );
+        opacity: 0.2;
+        z-index: 0;
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-image: url('./assets/carouscel.svg');
+        background-position: center right 1.5rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .content-title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .content-subtitle {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    /* Main content sections */
+    .sections {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        width: 100%;
+        gap: 3rem;
+    }
+
+    .section1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .section2 {
+        width: 100%;
+    }
+
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background-color: #f8f8f8;
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .form input, 
+    .form textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .must_btn {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        color: white;
+        border: none;
+        padding: 1rem;
+        width: 100%;
+        max-width: 20rem;
+        font-size: 1.4rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .first_row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .gradient-text {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1), rgba(254, 116, 123, 1));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .offers {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(108deg, rgba(217, 217, 217, 1) 0%, rgba(255, 255, 255, 1) 100%);
+        padding: 1rem;
+        border-radius: 1rem;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .did-you-know-btn {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1), rgba(254, 116, 123, 1));
+        color: white;
+        border: none;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .req {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        font-weight: bold;
+        margin-top: 1rem;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        padding: 1rem;
+        gap: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .req::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to right,
+            #E40303 0%,
+            #FF8C00 20%,
+            #FFED00 40%,
+            #008026 60%,
+            #006792 80%,
+            #750787 100%
+        );
+        opacity: 0.3;
+        z-index: 0;
+    }
+
+    .req > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .req1 {
+        margin-top: 1rem;
+    }
+
+    .req1 h1 {
+        font-size: 1.8rem;
+    }
+
+    .bold-text {
+        margin-left: 0.5rem;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .large-text {
+        font-size: 1.4rem;
+    }
+
+    .trans {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        margin-top: 1rem;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .trans-text {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        font-weight: bold;
+    }
+
+    .offers-content {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .offers-title {
+        font-size: 2rem;
+    }
+
+    .offers-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .knowledge-section {
+        margin-top: 1rem;
+    }
+
+    .highlight-text {
+        font-weight: bold;
+    }
+    
+    .trans2 {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        margin-top: 1rem;
+        flex-direction: row;
+    }
+
+    /* Navigation */
+    .header {
+        width: 100%;
+        position: sticky;
+        background-color: white;
+        top: 0;
+        z-index: 100;
+        left: 0;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .menu-toggle {
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .nav ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #000;
+        font-weight: 500;
+    }
+    
+    .nav .cta {
+        background: linear-gradient(to right, #f26c91, #ec76cb);
+        padding: 8px 16px;
+        border-radius: 6px;
+        color: white;
+        font-weight: 600;
+    }
+
+    /* Footer */
+    .footer {
+        background: linear-gradient(135deg, #e174b6, #fe747b);
+        color: #fff;
+        padding: 60px 24px 20px;
+        font-family: sans-serif;
+    }
+
+    .newsletter {
+        background: #fff;
+        border-radius: 20px;
+        color: #000;
+        padding: 30px;
+        max-width: 1000px;
+        margin: 0 auto 50px;
+        display: flex;  
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .newsletter h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .newsletter p {
+        margin-bottom: 20px;
+        color: #444;
+    }
+
+    .subscribe-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .subscribe-form input {
+        padding: 12px 16px;
+        border: none;
+        border-radius: 8px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .subscribe-form button {
+        padding: 12px 24px;
+        background: #d53b91;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .footer-columns {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-col h3, .footer-col h4 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    .footer-col p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .footer-col img {
+        height: auto;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .social-icons a {
+        margin-right: 10px;
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .news-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .news-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    .news-item p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .news-item small {
+        font-size: 12px;
+        color: #eee;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 20px;
+        font-size: 13px;
+    }
+
+    /* Media Queries */
+    @media (min-width: 576px) {
+        .head-top {
+            flex-wrap: nowrap;
+        }
+        
+        .head-top-first {
+            flex-wrap: nowrap;
+        }
+        
+        .icon p {
+            font-size: 1rem;
+        }
+        
+        .head-top-second {
+            gap: 2rem;
+        }
+        
+        .sections {
+            flex-direction: row;
+        }
+        
+        .section1 {
+            width: 65%;
+        }
+        
+        .section2 {
+            width: 35%;
+        }
+        
+        .first_row {
+            flex-direction: row;
+        }
+        
+        .trans {
+            flex-direction: row;
+            width: 100%;
+        }
+        
+        .trans-text {
+            margin-left: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .offers {
+            flex-direction: row;
+            text-align: left;
+            width: 60%;
+        }
+        
+        .offers-content {
+            margin-left: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .req {
+            flex-direction: row;
+            text-align: left;
+        }
+        
+        .subscribe-form {
+            flex-direction: row;
+        }
+        
+        .subscribe-form input {
+            width: 250px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .footer-columns {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        
+        .footer-col {
+            width: 45%;
+        }
+        
+        .newsletter {
+            flex-direction: row;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .footer-col {
+            width: 30%;
+            padding: 0 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .parent {
+            height: 35vh;
+        }
+        
+        .content {
+            background-position: top right;
+            padding: 1rem;
+        }
+        
+        .content-title {
+            font-size: 30px;
+        }
+        
+        .content-subtitle {
+            font-size: 25px;
+        }
+        
+        .btn-primary {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+        }
+        
+        .menu-toggle {
+            display: block;
+        }
+        
+        .nav {
+            display: none;
+            width: 100%;
+        }
+        
+        .nav.active {
+            display: block;
+        }
+        
+        .nav ul {
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1rem 0;
+        }
+        
+        .nav a {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-align: center;
+        }
+        
+        .nav .cta {
+            display: block;
+            margin: 0.5rem auto;
+            text-align: center;
+            width: 80%;
+            max-width: 200px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .head-top {
+            flex-direction: column;
+            padding: 0.2rem;
+        }
+        
+        .head-top-first {
+            justify-content: center;
+            gap: 2px;
+        }
+        
+        .icon {
+            gap: 1px;
+            margin: 3px;
+        }
+        
+        .icon img {
+            height: 12px;
+        }
+        
+        .icon p {
+            font-size: 10px;
+        }
+        
+        .head-top-second {
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 10px;
+        }
+        
+        .head-top-second img {
+            height: 20px;
+            width: 20px;
+        }
+        
+        .content-title {
+            font-size: 20px;
+        }
+        
+        .content-subtitle {
+            font-size: 12px;
+        }
+        
+        .must_btn {
+            padding: 0.5rem;
+            max-width: 15rem;
+            font-size: 1rem;
+        }
+        
+        .trans {
+            flex-direction: row;
+        }
+        
+        .trans-text {
+            margin-left: 0.5rem;
+            margin-top: 0;
+            font-size: 0.6rem;
+        }
+        
+        .req {
+            font-size: 1rem;
+            padding: 1rem;
+            gap: 0.5rem;
+            flex-direction: row;
+        }
+        
+        .bold-text {
+            font-size: 0.6rem;
+        }
+        
+        .footer-col img {
+            height: auto;
+            width: 45vw;
+        }
+    }
+    .nav ul {
+        position: relative;
+    }
+    
+    .nav li {
+        position: relative;
+    }
+    
+    .nav .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        min-width: 200px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-radius: 6px;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+    
+    .nav .submenu li {
+        padding: 8px 15px;
+    }
+    
+    .nav .submenu a {
+        color: #333;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+    
+    .nav .submenu a:hover {
+        color: #d53b91;
+    }
+    
+    .nav li:hover .submenu {
+        display: block;
+    }
+    
+    /* Adjust for mobile */
+    @media (max-width: 768px) {
+        .nav .submenu {
+            position: static;
+            box-shadow: none;
+            padding-left: 20px;
+            display: none;
+        }
+        
+        .nav li:hover .submenu {
+            display: none;
+        }
+        
+        .nav li.active .submenu {
+            display: block;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="head-top">
+        <div class="head-top-first">
+            <div class="icon">
+                <img src="./assets/call.svg" alt="call">
+                <p>+91 123456789</p>
+            </div>
+            <div class="icon">
+                <img src="./assets/location.svg" alt="location">
+                <p>VJ'S Transgender Clinic, Visakhapatnam.</p>
+            </div>
+            <div class="icon">
+                <img src="./assets/mail.svg" alt="mail">
+                <p>drvjs@gmail.com</p>
+            </div>
+        </div>
+        <div class="head-top-second">
+            <img src="./assets/pinterest.svg" alt="pinter">
+            <img src="./assets/facebook.svg" alt="pinter">
+            <img src="./assets/instagram.svg" alt="pinter">
+            <img src="./assets/linkedin.svg" alt="pinter">
+            <img src="./assets/twitter.svg" alt="pinter">
+            <img src="./assets/youtube.svg" alt="pinter">
+        </div>
+    </div>
+        <div class="header">
+        <div class="container">
+            <img src="./assets/headerlogo.png" alt="Logo" class="logo" />
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li>
+                        <a href="./about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="./srs.html">SRS/GCS</a>
+                    </li>
+                    <li>
+                        <a href="#">Breast Augmentation</a>
+                    </li>
+                    <li>
+                        <a href="./index.html">MTF Surgeries</a>
+                        <ul class="submenu">
+                            <li><a href="./index.html">Male To Female</a></li>
+                            <li><a href="./facial.html">Facial Feminization</a></li>
+                            <li><a href="./forehead-reconstruction.html">Forehead Reconstruction</a></li>
+                            <li><a href="./frontal-hairline.html">Fortanal Hairline</a></li>
+                            <li><a href="./feminization-rhinoplasty.html">Feminization Rhinoplasty</a></li>
+                            <li><a href="./dimple-creation.html">Dimple Creation</a></li>
+                            <li><a href="./chin-contouring.html">Chin/Jawline Contouring</a></li>
+                            <li><a href="./adams-apple.html">Adam’s Apple Correction</a></li>
+                            <li><a href="./hormonal.html">Hormonal Therapy</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./ftm.html">FTM Surgeries</a>
+                        <ul class="submenu">
+                            <li><a href="./ftm.html">FTM Surgery</a></li>
+                            <li><a href="./ftm_top.html">Top Surgery</a></li>
+                            <li><a href="./ftm_genital-reconstruction.html">Genital Reconstruction</a></li>
+                            <li><a href="./ftm_phalloplasty-surgery.html">Phalloplasty Surgery</a></li>
+                            <li><a href="./ftm_scrotoplasty.html">Scrotoplasty Surgery</a></li>
+                            <li><a href="./ftm_hysterectomy.html">Hysterectomy Surgery</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Results</a></li>
+                    <li>
+                        <a href="#">Location</a>
+                        <ul class="submenu">
+                            <li><a href="./location_bangalore.html">Bangalore</a></li>
+                            <li><a href="./location_hyderabad.html">Hyderabad</a></li>
+                        </ul>
+                    </li>                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="./contact.html" class="cta">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="parent">
+        <div class="content">
+            <p class="content-title">Facial Feminization Surgery</p>
+            <p class="content-subtitle">Transforming Masculine Features into a Feminine Appearance</p>
+            <button class="btn-primary">BOOK FREE CONSULTATION <img src="./assets/setes.svg" alt=""></button>
+        </div>
+    </div>
+    <div class="sections">
+        <div class="section1">
+            <button class="must_btn"><img src="./assets/BULB.svg" alt=""> MUST KNOWN FACTS</button>
+            <div class="first_row">
+                <div class="trans">
+                    <img src="./assets/custom.svg" alt="">
+                    <div>
+                      <p class="trans-text">FFS Is Highly Customizable<br><span style="font-weight: normal;">No two faces are the same FFS is not a one-size-fits-all procedure. Each surgery plan is uniquely tailored based on the patient’s facial anatomy and personal goals for femininity.</span></p>
+                    </div>
+                </div>
+                <div class="trans">
+                    <img src="./assets/gender.svg" alt="">
+                    <p class="trans-text">FFS Can Greatly Reduce Gender Dysphoria<br><span style="font-weight: normal;">Many patients report significant emotional relief and improved mental health after FFS, as facial changes help them feel more aligned with their true gender identity in everyday social settings</span></p>
+                </div>
+            </div>
+            <div class="first_row">
+                <div class="trans">
+                    <img src="./assets/m-3.svg" alt="">
+                    <p class="trans-text">Recovery Varies by Procedure<br><span style="font-weight: normal;">Recovery time depends on the number and complexity of procedures performed. Most patients can return to light activities within 2–3 weeks, with full healing in a few months.</span></p>
+                </div>
+                <div class="trans">
+                    <img src="./assets/m-4.svg" alt="">
+                    <p class="trans-text">Small Changes Make a Big Difference<br><span style="font-weight: normal;">Even subtle adjustments—like a smoother forehead or softer jawline—can profoundly impact how gender is perceived by others, often increasing self-confidence and social comfort.</span></p>
+                </div>
+            </div>
+            <div class="third">
+                <h1 class="gradient-text">Facial Feminization Surgery</h1>
+                <p style="font-size:1.5rem; font-weight:bold;">Comprehensive FFS Procedures</p>
+                <div class="trans2">
+                    <img src="./assets/one.svg" alt="">
+                    <p class="trans-text">Upper Third: Forehead and Hairline<br><span style="font-weight: normal;">Forehead Reconstruction: Reduces brow prominence to create a smoother forehead contour.Hairline Correction: Adjusts the hairline to a more traditionally feminine position, addressing patterns of hair loss.</span></p>
+                </div>
+                <div class="trans2">
+                    <img src="./assets/two.svg" alt="">
+                    <p class="trans-text">Middle Third: Cheeks and Nose<br><span style="font-weight: normal;">Malar Implants: Enhances cheekbone prominence for a fuller, more feminine facial structure.Rhinoplasty: Reshapes the nose to achieve a softer and more refined appearance. </span></p>
+                </div>
+                <div class="trans2">
+                    <img src="./assets/3.svg" alt="">
+                    <p class="trans-text">Lower Third: Jaw, Chin, and Neck<br><span style="font-weight: normal;">Jaw Reduction: Contours the jawline to reduce width and angularity.Genioplasty (Chin Plasty): Refines the chin's shape and projection for balanced facial proportions.Tracheal Shave (Adam’s Apple Reduction): Diminishes the prominence of the Adam's apple for a smoother neck profile</span></p>
+                </div>
+            </div>
+            <div class="offers">
+                <img src="./assets/off.svg" class="offer-logo" alt="off">
+                <div class="offers-content">
+                    <h1 class="offers-title">Total Cost</h1>
+                    <p class="offers-subtitle">(It depends on the sergery types)</p>
+                </div>
+            </div>
+            <div class="off-bottom">
+                <h1>Transparent and Affordable Pricing</h1>
+                <p>The cost of Facial Feminization Surgery varies based on the specific procedures selected. Prices start from <span style="font-weight: bold;">₹70,000</span> with the total cost determined after a personalized consultation to assess individual needs and goals.</p>
+                <div class="trans2">
+                    <img src="./assets/one.svg" alt="">
+                    <p class="trans-text">No Hidden Charges<br/>Our pricing is upfront and honest. Every quote includes consultation, surgery, anesthesia, and post-operative care—so you know exactly what you’re paying for.</p>
+                </div>
+                <div class="trans2">
+                    <img src="./assets/two.svg" alt="">
+                    <p class="trans-text">Cost-Effective Without Compromising Quality<br/> We combine world-class surgical expertise with affordability. You receive premium care from experienced professionals at a fraction of international prices.</p>
+                </div>
+                <div class="trans2">
+                    <img src="./assets/3.svg" alt="">
+                    <p class="trans-text">Custom Quotes Based on Your Needs<br/>Pricing is personalized according to the specific procedures you choose. We offer detailed cost breakdowns during consultation, ensuring full transparency from the start.</p>
+                </div>
+            </div>
+            <div>
+                <button class="did-you-know-btn">DID YOU KNOW?</button>
+                <div class="knowledge-section">
+                    <div class="trans2">
+                        <p class="trans-text">FFS can involve up to 10 different procedures, each designed to modify specific areas of the face for a more feminine appearance.</p>
+                    </div>
+                    <div class="trans2">
+                        <p class="trans-text">India is becoming a preferred destination for FFS due to its affordable pricing and internationally trained surgeons, attracting patients from around the world.</p>
+                    </div>
+                    <div class="trans2">
+                        <p class="trans-text">Studies show that transgender women who undergo FFS often experience significant improvements in self-esteem and mental health.</p>
+                    </div>
+                    <div class="trans2">
+                        <p class="trans-text">Even subtle FFS changes—like reducing the brow ridge or softening the jawline—can greatly affect how others perceive your gender.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="form">
+                <h2>REQUEST YOUR CONSULTATION</h2>
+                <input type="text" placeholder="Name">
+                <input type="tel" placeholder="Mobile">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message" rows="4"></textarea>
+                <button class="btn-primary">Next <span>>></span></button>
+            </div>
+            <div class="req">
+                <img src="./assets/info.svg" alt="">
+                <p>NEED HELP DECIDING?</p>
+            </div>
+            <div class="req1">
+                <h1>Transparent and Affordable Pricing</h1>
+                <p>The cost of Facial Feminization Surgery varies based on the specific procedures selected. Prices start from ₹70,000 with the total cost determined after a personalized consultation to assess individual needs and goals.</p>
+                <div class="trans2">
+                    <img src="./assets/expert.svg" alt="">
+                    <div>
+                      <p class="trans-text"> Expert Consultation Tailored to You<br><span style="font-weight: normal;">Our experienced surgeons take time to understand your goals, facial structure, and identity to recommend the best combination of procedures for you.</span></p>
+                    </div>
+                </div>
+                <div class="trans2">
+                    <img src="./assets/clear.svg" alt="">
+                    <p class="trans-text"> Informed Decisions with Clear Insights<br><span style="font-weight: normal;">We provide detailed explanations, before-and-after visuals, and expected outcomes so you can make confident, informed decisions about your transformation.</span></p>
+                </div>
+                <div class="trans2">
+                    <img src="./assets/personalized.svg" alt="">
+                    <p class="trans-text">Personalized Support Every Step of the Way<br><span style="font-weight: normal;">From your first inquiry to post-surgery recovery, our compassionate team is here to answer questions, address concerns, and walk with you through every stage of your journey.</span></p>
+                </div>
+                <div class="trans2">
+                    <img src="./assets/custom.svg" alt="">
+                    <p class="trans-text">Customized Treatment Plans<br><span style="font-weight: normal;">We don’t believe in one-size-fits-all. Each surgical plan is created based on your individual features, goals, and budget—ensuring the results reflect your true identity</span></p>
+                </div>
+            </div>
+            <div class="req">
+                <img src="./assets/info.svg" alt="">
+                <p>DID YOU KNOW ?</p>
+            </div>
+            <div class="trans2">
+                <img src="./assets/one.svg" alt="">
+                <p class="trans-text">FFS Is Not ReversibleFacial Feminization Surgery involves permanent changes to bone and soft tissue structures. Once performed, it cannot be undone—so careful planning and expert consultation are essential.</p>
+            </div>
+            <div class="trans2">
+                <img src="./assets/two.svg" alt="">
+                <p class="trans-text">Requires Thoughtful Consideration Since FFS significantly impacts appearance and gender perception, patients should approach the decision with a clear understanding of both physical and emotional outcomes.</p>
+            </div> 
+            <div class="trans2">
+                <img src="./assets/3.svg" alt="">
+                <p class="trans-text">Revision Is Possible, but Limited While minor revisions can be made later, full reversal of FFS is not feasible. That’s why working with experienced surgeons who specialize in transgender care is critical from the start.</p>
+            </div>      
+        </div>
+    </div>
+ <footer class="footer">
+      <!-- Newsletter Bar -->
+      <div class="newsletter">
+        <div>
+        <h2>Learn about our discounts</h2>
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text.
+        </p>
+        </div>
+        <div>
+        <form class="subscribe-form">
+            <input type="email" placeholder="Email address." />
+            <button type="submit">Sign Up</button>
+        </form>
+        </div>
+      </div>
+
+      <!-- Footer Main Content -->
+      <div class="footer-columns">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <img src="./assets/footerlogo.png" alt="">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h4>Site Navigation</h4>
+          <div style="display: flex; gap:1rem;">
+            <ul>
+            <li>Consultation</li>
+            <li>Teeth Whitening</li>
+            <li>Root Canals</li>
+            <li>Crowns & Bridges</li>
+            <li>Dental Implants</li>
+            <li>Tooth Extractions</li>
+          </ul>
+          <ul>
+            <li>Homepage</li>
+            <li>Our Services</li>
+            <li>Portfolio-Works</li>
+            <li>Latest News</li>
+            <li>Our Contacts</li>
+            <li>Privacy Policy</li>
+          </ul>
+          </div>
+        </div>
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h4>Latest News</h4>
+          <div class="news-item">
+            <img src="./assets/news.svg" style="width: 100px;" alt="news" />
+            <div>
+              <p>Top 5 Tips On How To Choose A Good Dentist</p>
+              <small>📅 01-22-2023</small>
+            </div>
+          </div>
+            <div class="news-item">
+            <img src="./assets/news.svg" style="width: 100px;" alt="news" />
+            <div>
+              <p>Top 5 Tips On How To Choose A Good Dentist</p>
+              <small>📅 01-22-2023</small>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>
+          © 2021 All rights reserved, Developed at Synsper Technologies
+        </p>
+      </div>
+    </footer>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+            
+            // For mobile - toggle submenus when clicking parent items
+            if (window.innerWidth <= 768) {
+                const navItems = document.querySelectorAll('.nav li');
+                navItems.forEach(item => {
+                    if (item.querySelector('.submenu')) {
+                        item.addEventListener('click', function(e) {
+                            if (e.target === this.querySelector('a')) {
+                                e.preventDefault();
+                                this.classList.toggle('active');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
