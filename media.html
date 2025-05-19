@@ -12,47 +12,6 @@
         margin: 0;
         box-sizing: border-box;
     }
-
-    /* Add this new modal style */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.9);
-        overflow: auto;
-    }
-    
-    .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 800px;
-        max-height: 80vh;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        object-fit: contain;
-    }
-    
-    .close {
-        position: absolute;
-        top: 20px;
-        right: 35px;
-        color: #fff;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 1001;
-    }
-    
-    .modal-content, .close {
-        animation: zoom 0.3s;
-    }
     
     @keyframes zoom {
         from {transform: translate(-50%, -50%) scale(0.5);}
@@ -909,10 +868,6 @@
         </div>
     </div>
     <div class="images_container">
-        <h1>Recent Review</h1>
-        <div class="first_iframes">
-            <iframe class="first_iframe" width="100%" height="700px" src="https://www.youtube.com/embed/kJ40a2Lcvnk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
         <div class="images">
             <div class="iframe">
             <iframe width="400px" height="250px" src="https://www.youtube.com/embed/kJ40a2Lcvnk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -976,12 +931,6 @@
             </div>
         </div>
     </div>
-
-    <!-- The Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
     <div class="smart-modal" id="smartModal">
         <div class="modal-header">
             <h3>Get in Touch With Us</h3>
@@ -1030,12 +979,12 @@
                     eiusmod tempor incididunt ut labore et dolore magna.
                 </p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/VJsTransgenderClinic"><i class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" href="https://x.com/i/flow/login?redirect_after_login=%2FVJsTransgender"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/vjstransgenderclinic/"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/vjs-transgender-clinic/"><i class="fab fa-linkedin-in"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCHy8oB_Zp2Fu3EQn3K0vpKA/featured"><i class="fab fa-youtube"></i></a>
+                    <a target="_blank" href="https://www.pinterest.com/vjstransgenderclinic/"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
 
@@ -1043,21 +992,21 @@
             <div class="footer-col">
                 <h4>Site Navigation</h4>
                 <div style="display: flex; gap:1rem; flex-wrap: wrap;">
-                    <ul>
-                        <li>Consultation</li>
-                        <li>Teeth Whitening</li>
-                        <li>Root Canals</li>
-                        <li>Crowns & Bridges</li>
-                        <li>Dental Implants</li>
-                        <li>Tooth Extractions</li>
+                    <ul style="list-style-type: none;text-decoration: none;">
+                        <li><a href="./about.html" style="text-decoration: none; color:white">About</a></li>
+                        <li><a href="./contact.html" style="text-decoration: none; color:white">Contact Us</a></li>
+                        <li><a href="./breast.html" style="text-decoration: none; color:white">Braest Augmentation</a></li>
+                        <li><a href="./index.html" style="text-decoration: none; color:white">MTF Surgery</a></li>
+                        <li><a href="./ftm.html" style="text-decoration: none; color:white">FTM Surgery</a></li>
+                        <li><a href="./srs.html" style="text-decoration: none; color:white">SRS Surgery</a></li>
                     </ul>
                     <ul>
-                        <li>Homepage</li>
-                        <li>Our Services</li>
-                        <li>Portfolio-Works</li>
-                        <li>Latest News</li>
-                        <li>Our Contacts</li>
-                        <li>Privacy Policy</li>
+                        <li><a href="./male_to_female.html" style="text-decoration: none; color:white">MTF Results</a></li>
+                        <li><a href="./female_to_male.html" style="text-decoration: none; color:white">FTM Results</a></li>
+                        <li><a href="./media.html" style="text-decoration: none; color:white">Media</a></li>
+                        <li><a href="./ftm_top.html" style="text-decoration: none; color:white">Top Surgery</a></li>
+                        <li><a href="./ftm_scrotoplasty.html" style="text-decoration: none; color:white">Scrotoplasty Surgery</a></li>
+                        <li><a href="./ftm_hysterectomy.html" style="text-decoration: none; color:white">Hysterectomy Surgery</a></li>
                     </ul>
                 </div>
             </div>
@@ -1111,42 +1060,6 @@
                         });
                     }
                 });
-            }
-        });
-
-        // Image Modal functionality
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImage");
-        const closeBtn = document.getElementsByClassName("close")[0];
-        
-        // Get all images with class 'imag'
-        const images = document.querySelectorAll('.imag');
-        
-        // Add click event to each image
-        images.forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
-            });
-        });
-        
-        // Close modal when clicking the X
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = "none";
-        });
-        
-        // Close modal when clicking outside the image
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-        
-        // Close modal when pressing Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape" && modal.style.display === "block") {
-                modal.style.display = "none";
             }
         });
         const smartModal = document.getElementById('smartModal');

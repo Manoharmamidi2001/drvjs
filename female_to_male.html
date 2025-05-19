@@ -14,45 +14,47 @@
     }
 
     /* Add this new modal style */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.9);
-        overflow: auto;
-    }
-    
-    .modal-content {
-        margin: auto;
-        display: block;
-        width: 80%;
-        max-width: 800px;
-        max-height: 80vh;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        object-fit: contain;
-    }
-    
-    .close {
-        position: absolute;
-        top: 20px;
-        right: 35px;
-        color: #fff;
-        font-size: 40px;
-        font-weight: bold;
-        cursor: pointer;
-        z-index: 1001;
-    }
-    
-    .modal-content, .close {
-        animation: zoom 0.3s;
-    }
+    .image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow: auto;
+}
+
+.image-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
+.image-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.image-modal-content,
+.image-close {
+    animation: zoom 0.3s;
+}
+
     
     @keyframes zoom {
         from {transform: translate(-50%, -50%) scale(0.5);}
@@ -648,7 +650,7 @@
         row-gap: 1.5rem;
         column-gap: 0.2rem;
     }
-    .imag{
+    .clickable-image{
         height: 50vh;
         cursor: pointer;
         transition: transform 0.3s ease;
@@ -889,24 +891,24 @@
     </div>
     <div class="images_container">
         <div class="images">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2022/01/Femaletomalesurgery1.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2022/01/Femaletomalesurgery3.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/9.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/8.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/7.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/6.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/5.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/4.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/3.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/1.jpg" alt="image" class="imag">
-            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/2.jpg" alt="image" class="imag">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2022/01/Femaletomalesurgery1.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2022/01/Femaletomalesurgery3.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/9.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/8.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/7.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/6.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/5.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/4.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/3.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/1.jpg" alt="image" class="clickable-image">
+            <img src="https://vjtransgenderclinics.com/wp-content/uploads/2024/07/2.jpg" alt="image" class="clickable-image">
         </div>
     </div>
 
     <!-- The Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
+    <div id="imageModal" class="image-modal">
+        <span class="image-close">&times;</span>
+        <img class="image-modal-content" id="imageModalContent">
     </div>
     <div class="smart-modal" id="smartModal">
         <div class="modal-header">
@@ -969,21 +971,21 @@
             <div class="footer-col">
                 <h4>Site Navigation</h4>
                 <div style="display: flex; gap:1rem; flex-wrap: wrap;">
-                    <ul>
-                        <li>Consultation</li>
-                        <li>Teeth Whitening</li>
-                        <li>Root Canals</li>
-                        <li>Crowns & Bridges</li>
-                        <li>Dental Implants</li>
-                        <li>Tooth Extractions</li>
+                    <ul style="list-style-type: none;text-decoration: none;">
+                        <li><a href="./about.html" style="text-decoration: none; color:white">About</a></li>
+                        <li><a href="./contact.html" style="text-decoration: none; color:white">Contact Us</a></li>
+                        <li><a href="./breast.html" style="text-decoration: none; color:white">Braest Augmentation</a></li>
+                        <li><a href="./index.html" style="text-decoration: none; color:white">MTF Surgery</a></li>
+                        <li><a href="./ftm.html" style="text-decoration: none; color:white">FTM Surgery</a></li>
+                        <li><a href="./srs.html" style="text-decoration: none; color:white">SRS Surgery</a></li>
                     </ul>
                     <ul>
-                        <li>Homepage</li>
-                        <li>Our Services</li>
-                        <li>Portfolio-Works</li>
-                        <li>Latest News</li>
-                        <li>Our Contacts</li>
-                        <li>Privacy Policy</li>
+                        <li><a href="./male_to_female.html" style="text-decoration: none; color:white">MTF Results</a></li>
+                        <li><a href="./female_to_male.html" style="text-decoration: none; color:white">FTM Results</a></li>
+                        <li><a href="./media.html" style="text-decoration: none; color:white">Media</a></li>
+                        <li><a href="./ftm_top.html" style="text-decoration: none; color:white">Top Surgery</a></li>
+                        <li><a href="./ftm_scrotoplasty.html" style="text-decoration: none; color:white">Scrotoplasty Surgery</a></li>
+                        <li><a href="./ftm_hysterectomy.html" style="text-decoration: none; color:white">Hysterectomy Surgery</a></li>
                     </ul>
                 </div>
             </div>
@@ -1041,40 +1043,21 @@
         });
 
         // Image Modal functionality
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImage");
-        const closeBtn = document.getElementsByClassName("close")[0];
-        
-        // Get all images with class 'imag'
-        const images = document.querySelectorAll('.imag');
-        
-        // Add click event to each image
-        images.forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
-            });
+        // Open image modal
+        document.querySelectorAll('.clickable-image').forEach(img => {
+        img.addEventListener('click', function () {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('imageModalContent');
+            modal.style.display = 'block';
+            modalImg.src = this.src;
         });
-        
-        // Close modal when clicking the X
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = "none";
         });
-        
-        // Close modal when clicking outside the image
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
+
+        // Close image modal
+        document.querySelector('.image-close').addEventListener('click', function () {
+        document.getElementById('imageModal').style.display = 'none';
         });
-        
-        // Close modal when pressing Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape" && modal.style.display === "block") {
-                modal.style.display = "none";
-            }
-        });
+
         const smartModal = document.getElementById('smartModal');
         const closeModal = document.getElementById('closeModal');
         const contactForm = document.getElementById('contactForm');
