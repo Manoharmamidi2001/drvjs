@@ -667,7 +667,16 @@
     .subtitle{
         font-weight: bold;
     }
-    
+    @media (max-width: 480px) {
+        .first_iframe{
+            width: 400px;
+            height: 250px;
+        }
+        .first_iframes{
+            display: flex;
+            justify-content: center;
+        }
+    }
     </style>
 </head>
 <body>
@@ -769,7 +778,10 @@
         </div>
     </div>
     <div class="images_container">
-        <iframe width="100%" height="700px" src="https://www.youtube.com/embed/kJ40a2Lcvnk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h1>Recent Review</h1>
+        <div class="first_iframes">
+            <iframe class="first_iframe" width="100%" height="700px" src="https://www.youtube.com/embed/kJ40a2Lcvnk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <div class="images">
             <div class="iframe">
             <iframe width="400px" height="250px" src="https://www.youtube.com/embed/kJ40a2Lcvnk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
