@@ -798,6 +798,137 @@
             display: block;
         }
     }
+    .smart-modal {
+        position: fixed;
+        bottom: -500px;
+        right: 20px;
+        width: 350px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transition: bottom 0.5s ease;
+        overflow: hidden;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .smart-modal.active {
+        bottom: 20px;
+    }
+    
+    .modal-header {
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        color: white;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .modal-header h3 {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+    
+    .close-modal {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+    
+    .modal-form input,
+    .modal-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .modal-form textarea {
+        height: 80px;
+        resize: none;
+    }
+    
+    .modal-form button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease;
+    }
+    
+    .modal-form button:hover {
+        transform: translateY(-3px);
+    }
+    
+    .modal-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    .whatsapp-btn, .call-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+    
+    .whatsapp-btn {
+        background-color: #25D366;
+    }
+    
+    .call-btn {
+        background-color: #0077B5;
+    }
+    
+    .whatsapp-btn:hover, .call-btn:hover {
+        transform: translateY(-3px);
+    }
+    
+    .modal-actions i {
+        margin-right: 8px;
+    }
+    
+    @media (max-width: 768px) {
+        .smart-modal {
+            width: 40%;
+            right: 5%;
+            bottom: -500px;
+        }
+        
+        .smart-modal.active {
+            bottom: 10px;
+        }
+    }
+    @media (max-width: 480px) {
+        .smart-modal {
+            width: 80%;
+        }
+        
+        .smart-modal.active {
+            bottom: 10px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -817,12 +948,12 @@
             </div>
         </div>
         <div class="head-top-second">
-            <img src="./assets/pinterest.svg" alt="pinter">
-            <img src="./assets/facebook.svg" alt="pinter">
-            <img src="./assets/instagram.svg" alt="pinter">
-            <img src="./assets/linkedin.svg" alt="pinter">
-            <img src="./assets/twitter.svg" alt="pinter">
-            <img src="./assets/youtube.svg" alt="pinter">
+            <a href="https://www.pinterest.com/vjstransgenderclinic/" target="_blank"><img src="./assets/pinterest.svg" alt="pinter"></a>
+            <a href="https://www.facebook.com/VJsTransgenderClinic" target="_blank"><img src="./assets/facebook.svg" alt="pinter"></a>
+            <a href="https://www.instagram.com/vjstransgenderclinic/" target="_blank"><img src="./assets/instagram.svg" alt="pinter"></a>
+            <a href="https://www.linkedin.com/company/vjs-transgender-clinic/" target="_blank"><img src="./assets/linkedin.svg" alt="pinter"></a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FVJsTransgender"><img src="./assets/twitter.svg" alt="pinter"></a>
+            <a href="https://www.youtube.com/channel/UCHy8oB_Zp2Fu3EQn3K0vpKA/featured"><img src="./assets/youtube.svg" alt="pinter"></a>
         </div>
     </div>
         <div class="header">
@@ -1044,6 +1175,29 @@
             </div>      
         </div>
     </div>
+    <div class="smart-modal" id="smartModal">
+        <div class="modal-header">
+            <h3>Get in Touch With Us</h3>
+            <button class="close-modal" id="closeModal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <form class="modal-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <input type="email" placeholder="Email Address">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="modal-actions">
+                <a href="https://wa.me/919849797776" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="tel:+919849797776" class="call-btn">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </div>
  <footer class="footer">
       <!-- Newsletter Bar -->
       <div class="newsletter">
@@ -1149,6 +1303,42 @@
                         });
                     }
                 });
+            }
+        });
+        const smartModal = document.getElementById('smartModal');
+        const closeModal = document.getElementById('closeModal');
+        const contactForm = document.getElementById('contactForm');
+        let modalShown = false;
+
+        // Show modal after scrolling 30% of page height
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const pageHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = (scrollPosition / pageHeight) * 100;
+            
+            if (scrollPercentage > 30 && !modalShown) {
+                smartModal.classList.add('active');
+                modalShown = true;
+            }
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            smartModal.classList.remove('active');
+        });
+
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for contacting us! We will get back to you soon.');
+            this.reset();
+            smartModal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === smartModal) {
+                smartModal.classList.remove('active');
             }
         });
     </script>
