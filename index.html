@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body, html {
-        padding: 0;
-        margin: 0;
-        font-family: 'Nunito', sans-serif;
-    }
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr VJ'S Transgender Clinic</title>
+    <link
+      rel="shortcut icon"
+      href="./media/logo_header.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./about_us.css" />
+    <link rel="stylesheet" href="./services.css" />
+    <link rel="stylesheet" href="./why.css" />
+    <link rel="stylesheet" href="./doctors.css" />
+    <link rel="stylesheet" href="./cta_banner.css" />
+    <link rel="stylesheet" href="./testimonials.css" />
+    <link rel="stylesheet" href="./footer.css" />
+  </head>
+  <style>
     /* Header styles */
     .head-top {
         background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
@@ -61,288 +61,182 @@
         height: 20px;
     }
 
-    /* Hero section */
-    .parent {
-        position: relative;
-        height: 70vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        overflow: hidden;
-        padding-bottom: 1.5rem;
+    
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, #e174b6, #fe747b);
+      color: #fff;
+      padding: 60px 24px 20px;
+      font-family: 'Nunito', sans-serif;
     }
 
-    .parent::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: linear-gradient(
-            to right,
-            #E40303 0%,
-            #FF8C00 20%,
-            #FFED00 40%,
-            #008026 60%,
-            #006792 80%,
-            #750787 100%
-        );
-        opacity: 0.2;
-        z-index: 0;
+    .newsletter {
+      background: #fff;
+      border-radius: 20px;
+      color: #000;
+      padding: 30px;
+      max-width: 1000px;
+      margin: 0 auto 50px;
+      display: flex;  
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
-    .content {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        background-image: url('./assets/carouscel.svg');
-        background-position: center right 1.5rem;
-        background-size: contain;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 1.5rem;
-        margin-top: 1rem;
+    .newsletter h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      text-align: center;
     }
 
-    .content-title {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
+    .newsletter p {
+      margin-bottom: 20px;
+      color: #444;
+      text-align: center;
     }
 
-    .content-subtitle {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        font-weight: bold;
+    .subscribe-form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      width: 100%;
     }
 
-    .btn-primary {
-        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
-        color: white;
-        border: none;
-        padding: 1rem 2rem;
-        font-size: 1rem;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        font-weight: bold;
+    .subscribe-form input {
+      padding: 12px 16px;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+      font-size: 14px;
+      border: 1px solid #ddd;
     }
 
-    /* Main content sections */
-    .sections {
-        display: flex;
-        flex-direction: column;
-        padding: 1.5rem;
-        margin-top: 1rem;
-        width: 100%;
-        gap: 3rem;
-    }
-
-    .section1 {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .section2 {
-        width: 100%;
-    }
-
-    .form {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        background-color: #f8f8f8;
-        padding: 1.5rem;
-        border-radius: 8px;
-    }
-
-    .form input, 
-    .form textarea {
-        width: 100%;
-        padding: 0.8rem;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-family: 'Nunito', sans-serif;
-    }
-
-    .must_btn {
-        background: linear-gradient(336deg, rgba(213, 59, 145, 1) 0%, rgba(254, 116, 123, 1) 100%);
-        color: white;
-        border: none;
-        padding: 1rem;
-        width: 100%;
-        max-width: 20rem;
-        font-size: 1.4rem;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .first_row {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .gradient-text {
-        background: linear-gradient(336deg, rgba(213, 59, 145, 1), rgba(254, 116, 123, 1));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .offers {
-        display: flex;
-        align-items: center;
-        background: linear-gradient(108deg, rgba(217, 217, 217, 1) 0%, rgba(255, 255, 255, 1) 100%);
-        padding: 1rem;
-        border-radius: 1rem;
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-    }
-
-    .did-you-know-btn {
-        background: linear-gradient(336deg, rgba(213, 59, 145, 1), rgba(254, 116, 123, 1));
-        color: white;
-        border: none;
-        padding: 1rem;
-        font-size: 1.2rem;
-        border-radius: 8px;
-        font-weight: bold;
-        cursor: pointer;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        width: 100%;
-        max-width: 600px;
-    }
-
-    .req {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        font-weight: bold;
-        margin-top: 1rem;
-        border-radius: 10px;
-        font-size: 1.2rem;
-        padding: 1rem;
-        gap: 1rem;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .req::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            to right,
-            #E40303 0%,
-            #FF8C00 20%,
-            #FFED00 40%,
-            #008026 60%,
-            #006792 80%,
-            #750787 100%
-        );
-        opacity: 0.3;
-        z-index: 0;
-    }
-
-    .req > * {
-        position: relative;
-        z-index: 1;
-    }
-
-    .req1 {
-        margin-top: 1rem;
-    }
-
-    .req1 h1 {
-        font-size: 1.8rem;
-    }
-
-    .bold-text {
-        margin-left: 0.5rem;
-        font-weight: bold;
-        font-size: 1rem;
-    }
-
-    .large-text {
-        font-size: 1.4rem;
-    }
-
-    .trans {
-        display: flex;
-        justify-content: start;
-        align-items: start;
-        margin-top: 1rem;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .trans-text {
-        margin-left: 0;
-        margin-top: 0.5rem;
-        font-weight: bold;
-    }
-
-    .offers-content {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    .offers-title {
-        font-size: 2rem;
-    }
-
-    .offers-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .knowledge-section {
-        margin-top: 1rem;
-    }
-
-    .highlight-text {
-        font-weight: bold;
+    .subscribe-form button {
+      padding: 12px 24px;
+      background: #d53b91;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
     }
     
-    .trans2 {
-        display: flex;
-        justify-content: start;
-        align-items: start;
-        margin-top: 1rem;
-        flex-direction: row;
+    .subscribe-form button:hover {
+      background: #b8327d;
     }
 
+    .footer-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-col h3, .footer-col h4 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .footer-col p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .footer-col img {
+        height: auto;
+        width: 200px;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-col ul li:hover {
+      color: #ffd6e7;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      transform: translateY(-3px);
+      color: #ffd6e7;
+    }
+
+    .news-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .news-item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .news-item p {
+      margin: 0;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .news-item small {
+      font-size: 12px;
+      color: #eee;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 20px;
+      font-size: 13px;
+      margin-top: 30px;
+    }
+    
     /* Navigation */
     .header {
-        width: 100%;
-        position: sticky;
-        background-color: white;
-        top: 0;
-        z-index: 100;
-        left: 0;
+      width: 100%;
+      position: sticky;
+      background-color: white;
+      top: 0;
+      z-index: 100;
+      left: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .container {
@@ -355,284 +249,122 @@
     }
 
     .logo {
-        height: 35px;
+      height: 40px;
+      width: auto;
     }
 
     .menu-toggle {
-        font-size: 30px;
-        cursor: pointer;
-        display: none;
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+      color: #d53b91;
     }
 
+    /* NAVIGATION */
     .nav ul {
-        display: flex;
-        gap: 30px;
-        list-style: none;
-        flex-wrap: wrap;
-        justify-content: center;
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     
     .nav a {
-        text-decoration: none;
-        font-size: 16px;
-        color: #000;
-        font-weight: 500;
+      text-decoration: none;
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .nav a:hover {
+      color: #d53b91;
     }
     
     .nav .cta {
-        background: linear-gradient(to right, #f26c91, #ec76cb);
-        padding: 8px 16px;
-        border-radius: 6px;
-        color: white;
-        font-weight: 600;
-    }
-
-    /* Footer */
-    .footer {
-        background: linear-gradient(135deg, #e174b6, #fe747b);
-        color: #fff;
-        padding: 60px 24px 20px;
-        font-family: sans-serif;
-    }
-
-    .newsletter {
-        background: #fff;
-        border-radius: 20px;
-        color: #000;
-        padding: 30px;
-        max-width: 1000px;
-        margin: 0 auto 50px;
-        display: flex;  
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .newsletter h2 {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 8px;
-    }
-
-    .newsletter p {
-        margin-bottom: 20px;
-        color: #444;
-    }
-
-    .subscribe-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-        width: 100%;
-    }
-
-    .subscribe-form input {
-        padding: 12px 16px;
-        border: none;
-        border-radius: 8px;
-        width: 100%;
-        font-size: 14px;
-    }
-
-    .subscribe-form button {
-        padding: 12px 24px;
-        background: #d53b91;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 600;
-    }
-
-    .footer-columns {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .footer-col h3, .footer-col h4 {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 16px;
-    }
-
-    .footer-col p {
-        font-size: 14px;
-        line-height: 1.6;
+      background: linear-gradient(to right, #f26c91, #ec76cb);
+      padding: 8px 16px;
+      border-radius: 6px;
+      color: white;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .footer-col img {
-        height: auto;
-        width: 100%;
-        max-width: 200px;
+    .nav .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(242, 108, 145, 0.4);
+      color: white;
     }
-
-    .footer-col ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-col ul li {
-        margin-bottom: 8px;
-        font-size: 14px;
-        cursor: pointer;
-    }
-
-    .social-icons a {
-        margin-right: 10px;
-        font-size: 18px;
-        color: white;
-        text-decoration: none;
-    }
-
-    .news-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 16px;
-    }
-
-    .news-item img {
-        width: 50px;
-        height: 50px;
-        border-radius: 6px;
-        object-fit: cover;
-    }
-
-    .news-item p {
-        margin: 0;
-        font-size: 14px;
-    }
-
-    .news-item small {
-        font-size: 12px;
-        color: #eee;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        padding-top: 20px;
-        font-size: 13px;
-    }
-
-    /* Media Queries */
-    @media (min-width: 576px) {
-        .head-top {
-            flex-wrap: nowrap;
-        }
-        
-        .head-top-first {
-            flex-wrap: nowrap;
-        }
-        
-        .icon p {
-            font-size: 1rem;
-        }
-        
-        .head-top-second {
-            gap: 2rem;
-        }
-        
-        .sections {
-            flex-direction: row;
-        }
-        
-        .section1 {
-            width: 65%;
-        }
-        
-        .section2 {
-            width: 35%;
-        }
-        
-        .first_row {
-            flex-direction: row;
-        }
-        
-        .trans {
-            flex-direction: row;
-            width: 100%;
-        }
-        
-        .trans-text {
-            margin-left: 0.5rem;
-            margin-top: 0;
-        }
-        
-        .offers {
-            flex-direction: row;
-            text-align: left;
-            width: 60%;
-        }
-        
-        .offers-content {
-            margin-left: 0.5rem;
-            margin-top: 0;
-        }
-        
-        .req {
-            flex-direction: row;
-            text-align: left;
-        }
-        
-        .subscribe-form {
-            flex-direction: row;
-        }
-        
-        .subscribe-form input {
-            width: 250px;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .footer-columns {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        
-        .footer-col {
-            width: 45%;
-        }
-        
+    
+    /* Responsive adjustments */
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
         .newsletter {
             flex-direction: row;
+            text-align: left;
         }
-    }
-
-    @media (min-width: 992px) {
+        
+        .newsletter h2, .newsletter p {
+            text-align: left;
+        }
+        
         .footer-col {
-            width: 30%;
+            flex: 1;
+            min-width: auto;
             padding: 0 15px;
         }
     }
-
-    @media (max-width: 768px) {
+    
+    /* Medium devices (tablets, 768px and up) */
+    @media (max-width: 991px) {
+        .head-top {
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .head-top-first {
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .head-top-second {
+            justify-content: center;
+        }
+        
         .parent {
-            height: 35vh;
+            height: 50vh;
         }
         
         .content {
-            background-position: top right;
-            padding: 1rem;
+            background-position: center right;
+            background-size: 50%;
         }
         
         .content-title {
-            font-size: 30px;
+            font-size: 2.5rem;
         }
         
         .content-subtitle {
-            font-size: 25px;
+            font-size: 1.5rem;
         }
         
-        .btn-primary {
-            padding: 0.5rem 1rem;
-            font-size: 0.8rem;
+        .cards {
+            flex-direction: column;
+            align-items: center;
         }
         
+        .card {
+            max-width: 100%;
+        }
+        
+        .nav ul {
+            gap: 15px;
+        }
+    }
+    
+    /* Small devices (landscape phones, 576px and up) */
+    @media (max-width: 767px) {
         .menu-toggle {
             display: block;
         }
@@ -648,98 +380,138 @@
         
         .nav ul {
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0;
             padding: 1rem 0;
+        }
+        
+        .nav li {
+            width: 100%;
+            text-align: center;
+            padding: 0.5rem 0;
         }
         
         .nav a {
             display: block;
             padding: 0.5rem 1rem;
-            text-align: center;
         }
         
         .nav .cta {
-            display: block;
-            margin: 0.5rem auto;
-            text-align: center;
-            width: 80%;
-            max-width: 200px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .head-top {
-            flex-direction: column;
-            padding: 0.2rem;
+            margin: 1rem auto;
+            display: inline-block;
         }
         
-        .head-top-first {
+        .parent {
+            height: 40vh;
+        }
+        
+        .content {
+            background-image: none;
             justify-content: center;
-            gap: 2px;
-        }
-        
-        .icon {
-            gap: 1px;
-            margin: 3px;
-        }
-        
-        .icon img {
-            height: 12px;
-        }
-        
-        .icon p {
-            font-size: 10px;
-        }
-        
-        .head-top-second {
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 10px;
-        }
-        
-        .head-top-second img {
-            height: 20px;
-            width: 20px;
+            padding: 1rem;
         }
         
         .content-title {
-            font-size: 20px;
+            font-size: 2rem;
         }
         
         .content-subtitle {
-            font-size: 12px;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about_content p {
+            font-size: 1rem;
+            text-align: left;
+        }
+        
+        .inspire h1 {
+            font-size: 1.8rem;
+        }
+        
+        .faq h1 {
+            font-size: 1.5rem;
+        }
+        
+        .faq p {
+            font-size: 1rem;
+            text-align: left;
+        }
+        
+        .footer-col {
+            min-width: 100%;
+        }
+        
+        .newsletter {
+            padding: 20px;
+        }
+        
+        .subscribe-form {
+            flex-direction: column;
+        }
+        
+        .subscribe-form input,
+        .subscribe-form button {
+            width: 100%;
+        }
+    }
+    
+    /* Extra small devices (portrait phones, less than 576px) */
+    @media (max-width: 575px) {
+        .icon p {
+            font-size: 0.7rem;
+        }
+        
+        .head-top-second img {
+            width: 15px;
+            height: 15px;
+        }
+        
+        .parent {
+            height: 30vh;
+        }
+        
+        .content-title {
+            font-size: 1.5rem;
+        }
+        
+        .content-subtitle {
+            font-size: 1rem;
         }
         
         .must_btn {
+            font-size: 1rem;
+            padding: 0.8rem;
+        }
+        
+        .about_content {
+            margin: 1rem;
             padding: 0.5rem;
-            max-width: 15rem;
-            font-size: 1rem;
         }
         
-        .trans {
-            flex-direction: row;
+        .card {
+            padding: 1.5rem;
         }
         
-        .trans-text {
-            margin-left: 0.5rem;
-            margin-top: 0;
-            font-size: 0.6rem;
+        .card h2 {
+            font-size: 1.2rem;
         }
         
-        .req {
-            font-size: 1rem;
-            padding: 1rem;
-            gap: 0.5rem;
-            flex-direction: row;
+        .card p {
+            font-size: 0.9rem;
         }
         
-        .bold-text {
-            font-size: 0.6rem;
+        .footer {
+            padding: 30px 15px;
         }
         
-        .footer-col img {
-            height: auto;
-            width: 45vw;
+        .news-item {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .news-item img {
+            width: 80px;
+            height: 80px;
         }
     }
     .nav ul {
@@ -932,9 +704,8 @@
     .newsletter-content{
         width: 50%;
     }
-    </style>
-</head>
-<body>
+  </style>
+  <body>
     <div class="head-top">
         <div class="head-top-first">
             <div class="icon">
@@ -961,10 +732,15 @@
     </div>
     <div class="header">
         <div class="container">
-            <img src="./assets/headerlogo.png" alt="Logo" class="logo" />
+          <a href="./index.html">
+            <a href="./index.html">
+            <img src="./assets/headerlogo.png" alt="Logo" class="logo" /></a>
             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
             <nav class="nav" id="nav">
                 <ul>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
                     <li>
                         <a href="./about.html">About Us</a>
                     </li>
@@ -972,9 +748,9 @@
                         <a href="./srs.html">SRS/GCS</a>
                     </li>
                     <li>
-                        <a href="./index.html">MTF Surgeries</a>
+                        <a href="#">MTF Surgeries</a>
                         <ul class="submenu">
-                            <li><a href="./index.html">Male To Female</a></li>
+                            <li><a href="./mtf.html">Male To Female</a></li>
                             <li><a href="./facial.html">Facial Feminization</a></li>
                             <li><a href="./forehead-reconstruction.html">Forehead Reconstruction</a></li>
                             <li><a href="./frontal-hairline.html">Fortanal Hairline</a></li>
@@ -987,7 +763,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="./ftm.html">FTM Surgeries</a>
+                        <a href="#">FTM Surgeries</a>
                         <ul class="submenu">
                             <li><a href="./ftm.html">FTM Surgery</a></li>
                             <li><a href="./ftm_top.html">Top Surgery</a></li>
@@ -1007,8 +783,7 @@
                             <li><a href="./male_to_female.html">Male To Female</a></li>
                             <li><a href="./female_to_male.html">Female To Male</a></li>
                         </ul>
-                    </li>
-                    <li>
+                    </li>                    <li>
                         <a href="#">Location</a>
                         <ul class="submenu">
                             <li><a href="./location_visakhapatnam.html">Visakhapatnam</a></li>
@@ -1024,179 +799,355 @@
                         </ul>
                     </li>                    
                     <li><a href="./media.html">Media</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <!-- <li><a href="#">Blog</a></li> -->
                     <li><a href="./contact.html" class="cta">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </div>
-    <div class="parent">
-        <div class="content">
-            <p class="content-title">MALE TO FEMALE SURGERY</p>
-            <p class="content-subtitle">Empowering Your True Identity with Compasionate </p>
-            <button class="btn-primary">BOOK FREE CONSULTATION <img src="./assets/setes.svg" alt=""></button>
+
+    <section class="hero">
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="slide active">
+            <img src="./media/carousel1.png" alt="Hero Image 1" />
+          </div>
+          <div class="slide active">
+            <img src="./media/carousel2.png" alt="Hero Image 1" />
+          </div>
+          <button class="carousel-btn prev">&#10094;</button>
+          <button class="carousel-btn next">&#10095;</button>
         </div>
-    </div>
-    <div class="sections">
-        <div class="section1">
-            <button class="must_btn"><img src="./assets/BULB.svg" alt=""> MUST KNOWN FACTS</button>
-            <div class="first_row">
-                <div class="trans">
-                    <img src="./assets/firstt.svg" alt="">
-                    <div>
-                      <p class="trans-text">Surgical removal of the testicles to reduce testosterone levels.<br><span style="font-weight: normal;">An orchiectomy is often the first step in male-to-female gender-affirming surgery.</span></p>
-                    </div>
-                </div>
-                <div class="trans">
-                    <img src="./assets/m-2.svg" alt="">
-                    <p class="trans-text">Multidisciplinary Approach Is Key<br><span style="font-weight: normal;">Successful gender affirmation goes beyond surgery. It involves psychological evaluation, hormone therapy, and post-operative care.</span></p>
-                </div>
-            </div>
-            <div class="first_row">
-                <div class="trans">
-                    <img src="./assets/m-3.svg" alt="">
-                    <p class="trans-text">Recovery Takes Time and Patience<br><span style="font-weight: normal;">Most patients need 4–6 weeks for initial recovery after surgery, with full healing and optimal results taking several months. </span></p>
-                </div>
-                <div class="trans">
-                    <img src="./assets/m-4.svg" alt="">
-                    <p class="trans-text"> Results Are Highly Individualized<br><span style="font-weight: normal;">No two transitions are the same. Surgical techniques and outcomes are tailored to each patient's body type, health status, and personal goals. </span></p>
-                </div>
-            </div>
-            <div class="third">
-                <h1 class="gradient-text">MALE TO FEMALE</h1>
-                <p style="font-size:1.5rem; font-weight:bold;">Transforming Lives with Compassion and Expertise</p>
-                <div class="first_row">
-                <div class="trans">
-                    <img src="./assets/firstt.svg" alt="">
-                    <div>
-                      <p class="trans-text">Orchiectomy: Surgical removal of the testicles to reduce testosterone levels.<br><span style="font-weight: normal;">An orchiectomy is often the first step in male-to-female gender-affirming surgery.</span></p>
-                    </div>
-                </div>
-                <div class="trans">
-                    <img src="./assets/second.svg" alt="">
-                    <p class="trans-text">Penectomy: Removal of the penis, often performed in preparation for vaginoplasty.<br><span style="font-weight: normal;">Penectomy is a gender-affirming surgical procedure that involves the removal of penile tissue.</span></p>
-                </div>
-            </div>
-            <div class="first_row">
-                <div class="trans">
-                    <img src="./assets/three.svg" alt="">
-                    <p class="trans-text">Vaginoplasty: Construction of a neovagina using penile and scrotal tissue, allowing for sexual function and aesthetic appearance.<br><span style="font-weight: normal;">Vaginoplasty is the cornerstone procedure in male-to-female gender affirmation surgery. </span></p>
-                </div>
-                <div class="trans">
-                    <img src="./assets/four.svg" alt="">
-                    <p class="trans-text">Labiaplasty: Creation of the labia majora and minora to enhance the natural appearance of female genitalia.<br><span style="font-weight: normal;">Labiaplasty is a cosmetic and reconstructive procedure performed as part of male-to-female gender confirmation surgery.</span></p>
-                </div>
-            </div>
-            <div class="first_row">
-                <div class="trans">
-                    <img src="./assets/five.svg" alt="">
-                    <p class="trans-text">Clitoroplasty: Formation of a clitoris with preserved nerve endings to maintain sexual sensitivity.<br><span style="font-weight: normal;">Clitoroplasty is a vital component of male-to-female gender affirmation surgery. This procedure involves the creation of a clitoris using the glans penis.</span></p>
-                </div>
-                <div class="trans">
-                    <img src="./assets/six.svg" alt="">
-                    <p class="trans-text">Facial Feminization Surgery (FFS):A set of surgical procedures designed to soften masculine.<br><span style="font-weight: normal;">Facial Feminization Surgery (FFS) plays a crucial role in helping transgender women align their facial appearance with their gender identity.</span></p>
-                </div>
-            </div>
-            </div>
-            <div class="offers">
-                <img src="./assets/off.svg" class="offer-logo" alt="off">
-                <div class="offers-content">
-                    <h1 class="offers-title">Total Cost</h1>
-                    <p class="offers-subtitle">(It depends on the sergery types)</p>
-                </div>
-            </div>
-            <div class="off-bottom">
-                <h1>TRANSGENDER SURGERY PROCEDURE</h1>
-                <p>Male to Female Surgery CostsSRS is reverible and once sgith the turning back to the previous sex is not possible SRS is.</p>
-                <div class="trans2">
-                    <img src="./assets/adams_3.svg" alt="">
-                    <p style=" margin-left:1rem;"><span style="font-weight: bold;">Anesthesia & Preparation</span><br>The patient is placed under general anesthesia. The genital area is sterilized and prepped for surgery.</p>
-                </div>
-                <div class="trans2">
-                    <img src="./assets/second.svg" alt="">
-                    <p style=" margin-left:1rem;"><span style="font-weight: bold;">Removal & Reconstruction</span><br>The penis and testes are removed, but important nerves and skin are preserved. The penile skin is inverted to create a neovaginal canal.</p>
-                </div>
-                <div class="trans2">
-                    <img src="./assets/four.svg" alt="">
-                    <p style=" margin-left:1rem;"><span style="font-weight: bold;">Creation of Neovagina & Neoclitoris</span><br>A space is created between the rectum and bladder to house the neovagina. The glans penis (rich in nerve endings) is reshaped into a neoclitoris to retain sexual sensation.</p>
-                </div>
-            </div>
-            <div>
-                <button class="did-you-know-btn">DID YOU KNOW?</button>
-                <div class="knowledge-section">
-                    <p class="bold-text"><span class="highlight-text">Creation of Female Genitals:</span> This step involves the creation of the following,</p>
-                    <div class="trans2">
-                        <p class="trans-text">MTF gender-affirming surgery can involve multiple procedures, including vaginoplasty, breast augmentation, and facial feminization surgery, depending on the individual’s goals.</p>
-                    </div>
-                    <div class="trans2">
-                        <p class="trans-text">The most common technique for vaginoplasty is the penile inversion method, where the penile skin is used to create a neovagina.</p>
-                    </div>
-                    <div class="trans2">
-                        <p class="trans-text">Some patients may require colovaginoplasty (using a segment of the colon to create a vagina) if there isn’t enough penile or scrotal skin or in revision surgeries.</p>
-                    </div>
-                    <div class="trans2">
-                        <p class="trans-text">After surgery, patients typically need to dilate the neovagina regularly to maintain its depth and width, especially during the first year.</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </section>
+
+    <section class="about-vj">
+      <div class="container-services">
+        <h2 class="gradient-title">Welcome to VJ’s Transgender Clinic India</h2>
+        <h3 class="sub-title">40+ Years Of Medical Excellence</h3>
+        <div class="divider"></div>
+
+        <div class="about-grid">
+          <div class="text-content">
+            <p>
+              Someone has rightly said, ‘The Sun Does Ask For Permission to
+              Shine’ as this is the same way your personality should be. Dr. C
+              Vijay Kumar is steadfast with the approach to provide the
+              individuals to improve themselves. Professionalism, Excellence and
+              Experience are the 3 major factors that are helping all those
+              individuals who are looking to undergo gender change surgery in
+              India. It’s all about assisting the individuals to feel confident
+              about themselves and that is what Dr. Vijay Kumar is doing it
+              continuously. The difference lies in the treatment given by our
+              doctor.
+            </p>
+            <p>
+              Dr. C Vijay Kumar puts the patient’s comfort first by giving the
+              best treatment options. His knowledge and brilliance are the key
+              factors for the individuals looking to get the MTF or FTM surgery
+              in Vizag to get the best possible outcomes. He works towards
+              achieving the desired results patients want and allowing them to
+              feel better about themselves.
+            </p>
+          </div>
+
+          <!-- Embedded YouTube Video -->
+          <div class="video-content">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/8A1GmB2GC0s"
+              title="Male To Female Surgery in Vizag | Patient Testimonial | VJ&#39;s Transgender Clinic"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
         </div>
-        <div class="section2">
-            <div class="form">
-                <h2>REQUEST YOUR CONSULTATION</h2>
-                <input type="text" placeholder="Name">
-                <input type="tel" placeholder="Mobile">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Message" rows="4"></textarea>
-                <button class="btn-primary">Next <span>>></span></button>
-            </div>
-            <div class="req">
-                <img src="./assets/info.svg" alt="">
-                <p>DID YOU NEED HELP</p>
-            </div>
-            <div class="req1">
-                <h1>TRANSGENDER SURGERY COST</h1>
-                <p>Male to Female Surgery Costs range between INR 2 to 5 Lakh's based on the number of procedures taken.</p>
-                <div class="trans2">
-                    <img src="./assets/expert.svg" alt="">
-                    <div>
-                      <p class="trans-text"> Expert Consultation Tailored to You<br><span style="font-weight: normal;">Our experienced surgeons take time to understand your goals, facial structure, and identity to recommend the best combination of procedures for you.</span></p>
-                    </div>
-                </div>
-                <div class="trans2">
-                    <img src="./assets/clear.svg" alt="">
-                    <p class="trans-text"> Informed Decisions with Clear Insights<br><span style="font-weight: normal;">We provide detailed explanations, before-and-after visuals, and expected outcomes so you can make confident, informed decisions about your transformation.</span></p>
-                </div>
-                <div class="trans2">
-                    <img src="./assets/personalized.svg" alt="">
-                    <p class="trans-text">Personalized Support Every Step of the Way<br><span style="font-weight: normal;">From your first inquiry to post-surgery recovery, our compassionate team is here to answer questions, address concerns, and walk with you through every stage of your journey.</span></p>
-                </div>
-                <div class="trans2">
-                    <img src="./assets/custom.svg" alt="">
-                    <p class="trans-text">Customized Treatment Plans<br><span style="font-weight: normal;">We don’t believe in one-size-fits-all. Each surgical plan is created based on your individual features, goals, and budget—ensuring the results reflect your true identity</span></p>
-                </div>
-            </div>
-            <div class="req">
-                <img src="./assets/info.svg" alt="">
-                <p>DID YOU KNOW ?</p>
-            </div>
-            <div class="trans2">
-                <img src="./assets/one.svg" alt="">
-                <p class="trans-text">Sensation, including the ability to orgasm, is often preserved or regained over time because surgeons typically preserve the glans penis, which is reshaped into a neoclitoris with nerve connections intact.</p>
-            </div>
-            <div class="trans2">
-                <img src="./assets/two.svg" alt="">
-                <p class="trans-text">Hormone replacement therapy (HRT) is usually continued both before and after surgery to support physical and emotional well-being.</p>
-            </div> 
-            <div class="trans2">
-                <img src="./assets/3.svg" alt="">
-                <p class="trans-text">Gender-affirming surgery is associated with a high satisfaction rate and often leads to significant improvements in mental health and quality of life for transgender women.</p>
-            </div>
-            <div class="trans2">
-                <img src="./assets/4.svg" alt="">
-                <p class="trans-text">Many countries now recognize gender-affirming surgery as medically necessary, and in some places, it may be covered by insurance or public healthcare systems.</p>
-            </div>    
+
+        <a href="./about.html" class="learn-more">Learn More About Us</a>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container-services">
+        <h2 class="gradient-title">A Wide Range of Services</h2>
+        <div class="divider"></div>
+
+        <div class="services-grid">
+          <!-- Repeat this card block 8 times with unique image/color -->
+           <a href="./facial.html" style="text-decoration: none;color:rgb(0, 0, 0)">
+          <div class="service-card" style="border-bottom: 4px solid #e40303">
+            <img src="./media/service1.jpg" alt="Service 1" class="card-img" />
+            <h4>Facial Feminization Surgery</h4>
+            <p>
+              No two faces are the same FFS is not a one-size-fits-all procedure. Each surgery plan is uniquely tailored based on the patient’s facial anatomy and personal goals for femininity.
+            </p>
+          </div>
+          </a>
+
+           <a href="./srs.html" style="text-decoration: none;color:rgb(0, 0, 0)">
+          <div class="service-card" style="border-bottom: 4px solid #ff8c00">
+            <img src="./media/service2.jpg" alt="Service 2" class="card-img" />
+            <h4>SRS surgery</h4>
+            <p>
+              Led by Dr. C. Vijay Kumar, the clinic specializes in Male-to-Female (MTF) and Female-to-Male (FTM) procedures using the latest surgical techniques and Methodologies.
+            </p>
+          </div>
+          </a>
+
+          <a style="text-decoration: none;color:rgb(0, 0, 0)" href="./ftm_hysterectomy.html">
+          <div class="service-card" style="border-bottom: 4px solid #ffed00">
+            <img src="./media/service3.jpg" alt="Service 3" class="card-img" />
+            <h4>HYSTERECTOMY SURGERY</h4>
+            <p>
+              Hysterectomies can be performed via abdominal, vaginal, or laparoscopic methods depending on individual needs and medical history.A hysterectomy involves the removal of the uterus.
+            </p>
+          </div>
+          </a>
+
+          <a style="text-decoration: none;color:rgb(0, 0, 0)" href="./mtf.html">
+          <div class="service-card" style="border-bottom: 4px solid #ffed00">
+            <img src="./media/service4.jpg" alt="Service 3" class="card-img" />
+            <h4>MTF Surgery</h4>
+            <p>
+              Successful gender affirmation goes beyond surgery. It involves psychological evaluation, hormone therapy, and post-operative care.An orchiectomy is often the first step.
+            </p>
+          </div>
+          </a>
+          
+          <a style="text-decoration: none;color:rgb(0, 0, 0)" href="./forehead-reconstruction.html">
+          <div class="service-card" style="border-bottom: 4px solid #750787">
+            <img src="./media/service5.jpg" alt="Service 5" class="card-img" />
+            <h4>Forehead Reconstruction</h4>
+            <p>
+             Among all facial surgeries, forehead reconstruction often has the most dramatic effect on perceived gender—especially when combined with hairline correction.
+            </p>
+          </div></a>
+
+          <a href="./dimple-creation.html" style="text-decoration: none;color:rgb(0, 0, 0)">
+          <div class="service-card" style="border-bottom: 4px solid #fe747b">
+            <img src="./media/service6.jpg" alt="Service 6" class="card-img" />
+            <h4>Dimple Creation Surgery</h4>
+            <p>
+              You can choose exactly where and how deep you want your dimples, based on your facial structure and smile pattern.Right after surgery, dimples may appear even when you're not smiling.
+            </p>
+          </div></a>
+          <a href="./ftm_top.html" style="text-decoration: none;color:rgb(0, 0, 0)">
+          <div class="service-card" style="border-bottom: 4px solid #006792">
+            <img src="./media/service1.jpg" alt="Service 7" class="card-img" />
+            <h4>Top surgery</h4>
+            <p>
+              Top Surgery comes under the category of female to male surgery.
+              For transsexual men, it is the way to get the desired masculine
+              look. The proces includes in FTM.
+            </p>
+          </div></a>
+
+          <a href="./breast.html" style="text-decoration: none;color:rgb(0, 0, 0)">
+          <div class="service-card" style="border-bottom: 4px solid #d53b91">
+            <img src="./media/service2.jpg" alt="Service 8" class="card-img" />
+            <h4>Breast Augmentation Surgery<h4>
+            <p>
+              Successful gender affirmation goes beyond surgery. It involves psychological evaluation, hormone therapy, and post-operative care.
+            </p>
+          </div></a>
         </div>
-    </div>
+
+        <a href="./mtf.html" class="learn-more">See More</a>
+      </div>
+    </section>
+
+    <section class="why-choose">
+      <div class="container-services">
+        <h2 class="gradient-title">Why Choose Dr VJ's Transgender Clinic?</h2>
+        <h3 class="sub-title">When you feel good, we feel good.</h3>
+        <div class="divider"></div>
+
+        <div class="choose-grid">
+          <!-- LEFT COLUMN: Cards -->
+          <div class="cards-column">
+            <div class="card" style="border-bottom: 4px solid #e40303">
+              <img src="./media/sex-reassigment.png" alt="Icon" />
+              <h4>Comprehensive Gender-Affirming Services</h4>
+              <p>
+                The clinic offers a full spectrum of gender-affirming procedures, including male-to-female (MTF) and female-to-male (FTM) surgeries.
+              </p>
+            </div>
+            <div class="card" style="border-bottom: 4px solid #ff8c00">
+              <img src="./media/sex-reassigment.png" alt="Icon" />
+              <h4> 40 Years of Experience</h4>
+              <p>
+                Dr. C. Vijay Kumar brings over four decades of surgical expertise, making him a trusted figure for patients seeking gender transition surgeries.
+              </p>
+            </div>
+            <div class="card" style="border-bottom: 4px solid #ffed00">
+              <img src="./media/sex-reassigment.png" alt="Icon" />
+              <h4>Advanced Technology and Personalized Care</h4>
+              <p>
+                Utilizing state-of-the-art medical technology, the clinic ensures safe and effective procedures. Each treatment plan is personalized.
+              </p>
+            </div>
+            <div class="card" style="border-bottom: 4px solid #008026">
+              <img src="./media/sex-reassigment.png" alt="Icon" />
+              <h4>Supportive Pre- and Post-Operative Care</h4>
+              <p>
+                Patients receive comprehensive support throughout their journey, including pre-surgical counseling, hormone therapy guidance.
+              </p>
+            </div>
+            <div class="card" style="border-bottom: 4px solid #750787">
+              <img src="./media/sex-reassigment.png" alt="Icon" />
+              <h4>Strategic Locations Across India</h4>
+              <p>
+                While headquartered in Visakhapatnam, Andhra Pradesh, VJ’s Transgender Clinic extends its services to various cities.
+              </p>
+            </div>
+            <div class="card" style="border-bottom: 4px solid #006792">
+              <img src="./media/sex-reassigment.png" alt="Icon" />
+              <h4>Free Video Consultations Available</h4>
+              <p>
+                To accommodate patients from different regions, the clinic offers complimentary video consultations.
+              </p>
+            </div>
+            <div class="card" style="border-bottom: 4px solid #fe747b">
+              <img src="./media/sex-reassigment.png" alt="Icon" />
+              <h4>Transparent Information on Procedures and Costs</h4>
+              <p>The clinic provides detailed information about various surgical options, associated risks, and cost estimates.
+            </div>
+            <div class="card" style="border-bottom: 4px solid #d53b91">
+              <img src="./media/sex-reassigment.png" alt="Icon" />
+              <h4>Positive Patient Testimonials and Outcomes</h4>
+              <p>Many patients have shared their satisfaction with the clinic's services, highlighting successful surgical outcomes and the compassionate care provided by Dr. Kumar and his team.</p>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Need Section -->
+          <div class="info-column">
+            <h4 class="info-title">
+              What is the need for Gender Change Surgery?
+            </h4>
+            <img
+              src="./media/carousel2.png"
+              alt="Gender Change Info"
+              class="info-img"
+            />
+            <ul class="custom-bullets">
+              <li>
+                <img src="./media/sex-reassigment.png" alt="" /> ‘Sexual
+                identity is an integral part of human psychology. Especially,
+                for the transgender, it can be a problematic situation as they
+                always struggle to find their own identity. People consider them
+                different which is not the case in any way. VJ’s Transgender
+                Clinic, know the importance of ‘Change’ and we can change it for
+                ‘YOU’.
+              </li>
+              <li>
+                <img src="./media/sex-reassigment.png" alt="" /> With gender
+                reassignment surgery it helps individuals to have their place in
+                society and get the respect which they deserve. We know
+                sometimes it is all about getting the right support to make
+                themselves feel comfortable about the whole situation and people
+                accepting them the way they want to live. Still, a lot has to be
+                done on making everyone aware of transgender rights and helping
+                them to enjoy their journey of being transgender.
+              </li>
+              <li>
+                <img src="./media/sex-reassigment.png" alt="" /> No doubt,
+                surgery is the last step to bring that change in your
+                personality but it is an important decision that cannot be taken
+                lightly.
+              </li>
+              <li>
+                <img src="./media/sex-reassigment.png" alt="" /> If there is a
+                case of gender dysphoria then the patient is asked to get
+                counseling for 3 months. Initially, the hormone therapy is given
+                by the set standards and later the sex reassignment procedure is
+                performed. Vj’s Transgender Clinic will help you adjust to your
+                new body and lifestyle with the best and safe surgical
+                procedure.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doctors">
+      <div class="container-services">
+        <h2 class="gradient-title">Meet our Doctors</h2>
+        <div class="divider"></div>
+
+        <div class="doctor-grid">
+          <div class="doctor-card" style="border-bottom: 4px solid #e40303">
+            <img src="./media/doctor.jpg" alt="Doctor 1" />
+            <h4>Dr N S SAI ANUSHA</h4>
+            <p>Consultant Obstetrician & Gynecologist</p>
+          </div>
+          <!-- <div class="doctor-card" style="border-bottom: 4px solid #ffed00">
+            <img src="./media/doctor1.png" alt="Doctor 2" />
+            <h4>Doctor Name</h4>
+            <p>Designation</p>
+          </div>
+          <div class="doctor-card" style="border-bottom: 4px solid #008026">
+            <img src="./media/doctor1.png" alt="Doctor 3" />
+            <h4>Doctor Name</h4>
+            <p>Designation</p>
+          </div> -->
+        </div>
+
+        <!-- <a href="#doctors" class="learn-more">See More</a> -->
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-container">
+        <h2 class="quote">
+          “We are here not to transform appearances, but to uplift spirits and
+          empower identities”
+        </h2>
+        <a href="#consultation" class="cta-button"
+          >Schedule your consultation</a
+        >
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <h2 class="gradient-title">Let’s see our patients feedback !</h2>
+      <div class="divider"></div>
+
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <!-- Repeat this .carousel-card for 5 cards -->
+          <div class="carousel-card">
+            <div class="before-after-img">
+              <img src="./media/before_after1.png" alt="Before and After" />
+            </div>
+            <div class="testimonial-box">
+              <p>
+                “Having gender change surgery at VJ’s Transgender Clinic has
+                been a life-changing experience. I finally feel confident in who
+                I am and how I present to the world.”
+              </p>
+              <h4>Patient Name</h4>
+              <span>Place</span>
+            </div>
+          </div>
+          <!-- Add 4 more similar cards here -->
+        </div>
+
+        <!-- Arrows -->
+        <button class="arrow left" onclick="prevSlide()">&#8592;</button>
+        <button class="arrow right" onclick="nextSlide()">&#8594;</button>
+
+        <!-- Dots -->
+        <div class="dots" id="dots"></div>
+      </div>
+
+      <a href="#journeys" class="explore-link">Explore Patient Journeys</a>
+    </section>
+
     <div class="smart-modal" id="smartModal">
         <div class="modal-header">
             <h3>Get in Touch With Us</h3>
@@ -1221,28 +1172,39 @@
         </div>
     </div>
     <footer class="footer">
+        <!-- Newsletter Bar -->
         <div class="newsletter">
             <div class="newsletter-content">
                 <h2>Learn about our discounts</h2>
                 <p>Learn More About Discounts Made for the Trans Community</p>
             </div>
-            <div>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Email address." />
-                    <button type="submit">Sign Up</button>
-                </form>
-            </div>
+            <form class="subscribe-form">
+                <input type="email" placeholder="Email address." />
+                <button type="submit">Sign Up</button>
+            </form>
         </div>
 
+        <!-- Footer Main Content -->
         <div class="footer-columns">
+            <!-- Column 1 -->
             <div class="footer-col">
-                <img src="./assets/footerlogo.png" alt="">
+              <a href="./index.html">
+                <img src="./assets/footerlogo.png" alt="VJ's Transgender Clinic Logo"></a>
                 <p>VJ’s Transgender Clinic - Specialist care center for transgender providing all sorts of gender change surgery with the best outcome.</p>
+                <div class="social-icons">
+                    <a target="_blank" href="https://www.facebook.com/VJsTransgenderClinic"><i class="fab fa-facebook-f"></i></a>
+                    <a target="_blank" href="https://x.com/i/flow/login?redirect_after_login=%2FVJsTransgender"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/vjstransgenderclinic/"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/vjs-transgender-clinic/"><i class="fab fa-linkedin-in"></i></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCHy8oB_Zp2Fu3EQn3K0vpKA/featured"><i class="fab fa-youtube"></i></a>
+                    <a target="_blank" href="https://www.pinterest.com/vjstransgenderclinic/"><i class="fab fa-pinterest-p"></i></a>
+                </div>
             </div>
 
+            <!-- Column 2 -->
             <div class="footer-col">
                 <h4>Site Navigation</h4>
-                <div style="display: flex; gap:1rem;">
+                <div style="display: flex; gap:1rem; flex-wrap: wrap;">
                     <ul style="list-style-type: none;text-decoration: none;">
                         <li><a href="./about.html" style="text-decoration: none; color:white">About</a></li>
                         <li><a href="./contact.html" style="text-decoration: none; color:white">Contact Us</a></li>
@@ -1262,6 +1224,7 @@
                 </div>
             </div>
             
+            <!-- Column 3 -->
             <div class="footer-col">
                 <h4>Latest News & Updates</h4>
                 <div class="news-item">
@@ -1285,31 +1248,85 @@
             </div>
         </div>
 
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p>© 2021 All rights reserved, Developed at Synsper Technologies</p>
+            <p>
+                © 2021 All rights reserved, Developed at Synsper Technologies
+            </p>
         </div>
     </footer>
+
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const nav = document.getElementById('nav');
-            nav.classList.toggle('active');
-            
-            // For mobile - toggle submenus when clicking parent items
-            if (window.innerWidth <= 768) {
-                const navItems = document.querySelectorAll('.nav li');
-                navItems.forEach(item => {
-                    if (item.querySelector('.submenu')) {
-                        item.addEventListener('click', function(e) {
-                            if (e.target === this.querySelector('a')) {
-                                e.preventDefault();
-                                this.classList.toggle('active');
-                            }
-                        });
-                    }
-                });
-            }
+      const carousel = document.getElementById("carousel");
+      const dotsContainer = document.getElementById("dots");
+      const totalSlides = 5;
+      let currentIndexH = 0;
+
+      function renderDots() {
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement("span");
+          dot.onclick = () => goToSlide(i);
+          dotsContainer.appendChild(dot);
+        }
+        updateDots();
+      }
+
+      function updateDots() {
+        dotsContainer.childNodes.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentIndexH);
         });
-        const smartModal = document.getElementById('smartModal');
+      }
+
+      function goToSlide(index) {
+        currentIndexH = index;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+        updateDots();
+      }
+
+      function nextSlide() {
+        currentIndexH = (currentIndexH + 1) % totalSlides;
+        goToSlide(currentIndexH);
+      }
+
+      function prevSlide() {
+        currentIndexH = (currentIndexH - 1 + totalSlides) % totalSlides;
+        goToSlide(currentIndexH);
+      }
+
+      renderDots();
+
+      const toggle = document.getElementById("menu-toggle");
+      const nav = document.getElementById("nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      const slides = document.querySelectorAll(".slide");
+      const nextBtn = document.querySelector(".next");
+      const prevBtn = document.querySelector(".prev");
+      let currentIndexT = 0;
+
+      function showSlide(index) {
+        slides.forEach((s) => s.classList.remove("active"));
+        slides[index].classList.add("active");
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentIndexT = (currentIndexT + 1) % slides.length;
+        showSlide(currentIndexT);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndexT = (currentIndexT - 1 + slides.length) % slides.length;
+        showSlide(currentIndexT);
+      });
+
+      // Optional: auto-slide every 5s
+      setInterval(() => {
+        currentIndexT = (currentIndexT + 1) % slides.length;
+        showSlide(currentIndexT);
+      }, 5000);
+      const smartModal = document.getElementById('smartModal');
         const closeModal = document.getElementById('closeModal');
         const contactForm = document.getElementById('contactForm');
         let modalShown = false;
@@ -1346,5 +1363,5 @@
             }
         });
     </script>
-</body>
+  </body>
 </html>

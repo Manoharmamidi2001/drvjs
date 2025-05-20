@@ -1,0 +1,88 @@
+.doctors {
+  background: #fff;
+  padding: 60px 24px;
+  color: #000;
+  text-align: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.doctor-grid {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
+  margin-bottom: 32px;
+}
+
+.doctor-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  max-width: 320px;
+  width: 100%;
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.doctor-card:hover {
+  transform: translateY(-4px);
+}
+
+.doctor-card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.doctor-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.doctor-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    justify-content: space-between;
+  }
+  .doctor-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+  .doctor-card:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .gradient-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-card {
+    max-width: 90%;
+  }
+}

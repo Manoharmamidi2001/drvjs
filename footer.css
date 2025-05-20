@@ -1,0 +1,119 @@
+.footer {
+  background: linear-gradient(135deg, #e174b6, #fe747b);
+  color: #fff;
+  padding: 60px 24px 20px;
+  font-family: sans-serif;
+}
+
+.newsletter {
+  background: #fff;
+  border-radius: 20px;
+  color: #000;
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.newsletter h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.newsletter p {
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.subscribe-form input {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  width: 250px;
+  font-size: 14px;
+}
+
+.subscribe-form button {
+  padding: 12px 24px;
+  background: #d53b91;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h3, .footer-col h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.footer-col p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.news-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.news-item p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.news-item small {
+  font-size: 12px;
+  color: #eee;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
+  font-size: 13px;
+}
